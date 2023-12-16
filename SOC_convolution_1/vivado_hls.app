@@ -1,0 +1,21 @@
+<project xmlns="com.autoesl.autopilot.project" name="SOC_convolution_1" top="">
+    <files>
+        <file name="../Main.cpp" sc="0" tb="1" cflags=""/>
+        <file name="SOC_convolution_1/Conv_14.cpp" sc="0" tb="false" cflags=""/>
+        <file name="SOC_convolution_1/Conv_14.h" sc="0" tb="false" cflags=""/>
+        <file name="SOC_convolution_1/Conv_28.cpp" sc="0" tb="false" cflags=""/>
+        <file name="SOC_convolution_1/Conv_28.h" sc="0" tb="false" cflags=""/>
+        <file name="SOC_convolution_1/FIFO.cpp" sc="0" tb="false" cflags=""/>
+        <file name="SOC_convolution_1/FIFO.h" sc="0" tb="false" cflags=""/>
+        <file name="Inputs.csv" sc="0" tb="false" cflags=""/>
+    </files>
+    <includePaths/>
+    <libraryPaths/>
+    <Simulation>
+        <SimFlow name="csim" clean="true" csimMode="0" lastCsimMode="0"/>
+    </Simulation>
+    <solutions xmlns="">
+        <solution name="solution1" status="active"/>
+    </solutions>
+</project>
+

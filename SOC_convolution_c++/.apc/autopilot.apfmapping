@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<autopilotfilemapping:AutoPilotFileMapping xmlns:autopilotfilemapping="www.autoesl.com/autopilotfilemapping">
+  <source>
+    <originFiles name="operation.h" path="C:\Users\Mahmoud\Desktop\SOC_convolution_c++\operation.h"/>
+    <originFiles name="operation.cpp" path="C:\Users\Mahmoud\Desktop\SOC_convolution_c++\operation.cpp"/>
+    <originFiles name="fifo.h" path="C:\Users\Mahmoud\Desktop\SOC_convolution_c++\fifo.h"/>
+    <originFiles name="fifo.cpp" path="C:\Users\Mahmoud\Desktop\SOC_convolution_c++\fifo.cpp"/>
+    <originFiles name="conv_28.h" path="C:\Users\Mahmoud\Desktop\SOC_convolution_c++\conv_28.h"/>
+    <originFiles name="conv_28.cpp" path="C:\Users\Mahmoud\Desktop\SOC_convolution_c++\conv_28.cpp"/>
+    <originFiles name="conv_14.h" path="C:\Users\Mahmoud\Desktop\SOC_convolution_c++\conv_14.h"/>
+    <originFiles name="conv_14.cpp" path="C:\Users\Mahmoud\Desktop\SOC_convolution_c++\conv_14.cpp"/>
+  </source>
+  <testbench>
+    <originFiles name="main.cpp" path="C:\Users\Mahmoud\Desktop\SOC_convolution_c++\main.cpp"/>
+  </testbench>
+</autopilotfilemapping:AutoPilotFileMapping>

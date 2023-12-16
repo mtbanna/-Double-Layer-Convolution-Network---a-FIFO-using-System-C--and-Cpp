@@ -1,0 +1,924 @@
+
+
+================================================================
+== Vivado HLS Report for 'compute'
+================================================================
+* Date:           Thu May 25 12:09:16 2023
+
+* Version:        2017.4 (Build 2086221 on Fri Dec 15 21:13:33 MST 2017)
+* Project:        SOC_convolution_c++
+* Solution:       solution1
+* Product family: virtex7
+* Target device:  xc7vx690tffg1761-2
+
+
+================================================================
+== Performance Estimates
+================================================================
++ Timing (ns): 
+    * Summary: 
+    +--------+-------+----------+------------+
+    |  Clock | Target| Estimated| Uncertainty|
+    +--------+-------+----------+------------+
+    |ap_clk  |  10.00|      8.42|        1.25|
+    +--------+-------+----------+------------+
+
++ Latency (clock cycles): 
+    * Summary: 
+    +------+------+------+------+---------+
+    |   Latency   |   Interval  | Pipeline|
+    |  min |  max |  min |  max |   Type  |
+    +------+------+------+------+---------+
+    |  6292|  6292|  6292|  6292|   none  |
+    +------+------+------+------+---------+
+
+    + Detail: 
+        * Instance: 
+        N/A
+
+        * Loop: 
+        +-------------+------+------+----------+-----------+-----------+------+----------+
+        |             |   Latency   | Iteration|  Initiation Interval  | Trip |          |
+        |  Loop Name  |  min |  max |  Latency |  achieved |   target  | Count| Pipelined|
+        +-------------+------+------+----------+-----------+-----------+------+----------+
+        |- Loop 1     |  3948|  3948|       282|          -|          -|    14|    no    |
+        | + Loop 1.1  |   280|   280|        20|          -|          -|    14|    no    |
+        |- Loop 2     |   420|   420|        30|          -|          -|    14|    no    |
+        | + Loop 2.1  |    28|    28|         2|          -|          -|    14|    no    |
+        |- Loop 3     |   392|   392|         2|          -|          -|   196|    no    |
+        |- Loop 4     |   420|   420|        30|          -|          -|    14|    no    |
+        | + Loop 4.1  |    28|    28|         2|          -|          -|    14|    no    |
+        |- Loop 5     |   994|   994|       142|          -|          -|     7|    no    |
+        | + Loop 5.1  |   140|   140|        20|          -|          -|     7|    no    |
+        |- Loop 6     |   112|   112|        16|          -|          -|     7|    no    |
+        | + Loop 6.1  |    14|    14|         2|          -|          -|     7|    no    |
+        +-------------+------+------+----------+-----------+-----------+------+----------+
+
+============================================================
++ Verbose Summary: Synthesis Manager
+============================================================
+InlineROM: 1
+ExposeGlobal: 0
+============================================================
++ Verbose Summary: CDFG Model
+============================================================
+IsTopModel: 1
+ResetActiveHigh: 1
+IsCombinational: 0
+IsDatapathOnly: 0
+HasWiredReturn: 1
+HasMFsm: 0
+HasVarLatency: 1
+IsPipeline: 0
+IsRtlPipelined: 0
+IsInstanceOverlapped: 0
+IsDontTouch: 0
+HasImplIP: 0
+IsGatedGlobalClock: 0
+
+
+============================================================
++ Verbose Summary: Schedule
+============================================================
+* Number of FSM states : 54
+* Pipeline : 0
+* Dataflow Pipeline: 0
+
+* FSM state transitions: 
+1 --> 
+	2  / true
+2 --> 
+	3  / (!exitcond1_i)
+	23  / (exitcond1_i)
+3 --> 
+	4  / (!exitcond_i)
+	2  / (exitcond_i)
+4 --> 
+	5  / true
+5 --> 
+	6  / true
+6 --> 
+	7  / true
+7 --> 
+	8  / true
+8 --> 
+	9  / true
+9 --> 
+	10  / true
+10 --> 
+	11  / true
+11 --> 
+	12  / true
+12 --> 
+	13  / true
+13 --> 
+	14  / true
+14 --> 
+	15  / true
+15 --> 
+	16  / true
+16 --> 
+	17  / true
+17 --> 
+	18  / true
+18 --> 
+	19  / true
+19 --> 
+	20  / true
+20 --> 
+	21  / true
+21 --> 
+	22  / true
+22 --> 
+	3  / true
+23 --> 
+	24  / (!exitcond5)
+	26  / (exitcond5)
+24 --> 
+	25  / (!exitcond4)
+	23  / (exitcond4)
+25 --> 
+	24  / true
+26 --> 
+	27  / (!exitcond_i2)
+	28  / (exitcond_i2)
+27 --> 
+	26  / true
+28 --> 
+	29  / (!exitcond3)
+	31  / (exitcond3)
+29 --> 
+	30  / (!exitcond2)
+	28  / (exitcond2)
+30 --> 
+	29  / true
+31 --> 
+	32  / (!exitcond1_i5)
+	52  / (exitcond1_i5)
+32 --> 
+	33  / (!exitcond_i9)
+	31  / (exitcond_i9)
+33 --> 
+	34  / true
+34 --> 
+	35  / true
+35 --> 
+	36  / true
+36 --> 
+	37  / true
+37 --> 
+	38  / true
+38 --> 
+	39  / true
+39 --> 
+	40  / true
+40 --> 
+	41  / true
+41 --> 
+	42  / true
+42 --> 
+	43  / true
+43 --> 
+	44  / true
+44 --> 
+	45  / true
+45 --> 
+	46  / true
+46 --> 
+	47  / true
+47 --> 
+	48  / true
+48 --> 
+	49  / true
+49 --> 
+	50  / true
+50 --> 
+	51  / true
+51 --> 
+	32  / true
+52 --> 
+	53  / (!exitcond1)
+53 --> 
+	54  / (!exitcond)
+	52  / (exitcond)
+54 --> 
+	53  / true
+
+* FSM state operations: 
+
+ <State 1> : 0.85ns
+ST_1 : Operation 55 [1/1] (0.00ns)   --->   "call void (...)* @_ssdm_op_SpecBitsMap([784 x double]* %ip) nounwind, !map !51"
+ST_1 : Operation 56 [1/1] (0.00ns)   --->   "call void (...)* @_ssdm_op_SpecTopModule([8 x i8]* @compute_str) nounwind"
+ST_1 : Operation 57 [1/1] (0.00ns)   --->   "%fifo_in_temp = alloca [196 x double], align 16" [SOC_convolution_c++/operation.cpp:10]   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 2.26> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 64> <Depth = 49> <RAM>
+ST_1 : Operation 58 [1/1] (0.00ns)   --->   "%in_conv2 = alloca [196 x double], align 8" [SOC_convolution_c++/operation.cpp:12]   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 2.26> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 64> <Depth = 49> <RAM>
+ST_1 : Operation 59 [1/1] (0.85ns)   --->   "br label %.loopexit" [SOC_convolution_c++/conv_28.cpp:7->SOC_convolution_c++/operation.cpp:16]
+
+ <State 2> : 1.36ns
+ST_2 : Operation 60 [1/1] (0.00ns)   --->   "%i_i = phi i4 [ 0, %0 ], [ %i_1, %.loopexit.loopexit ]"
+ST_2 : Operation 61 [1/1] (0.87ns)   --->   "%exitcond1_i = icmp eq i4 %i_i, -2" [SOC_convolution_c++/conv_28.cpp:7->SOC_convolution_c++/operation.cpp:16]   --->   Core 25 'Cmp' <Latency = 0> <II = 1> <Delay = 0.67> <FuncUnit> <Opcode : 'icmp'> <InPorts = 2> <OutPorts = 1>
+ST_2 : Operation 62 [1/1] (0.00ns)   --->   "%empty = call i32 (...)* @_ssdm_op_SpecLoopTripCount(i64 14, i64 14, i64 14) nounwind"
+ST_2 : Operation 63 [1/1] (1.01ns)   --->   "%i_1 = add i4 %i_i, 1" [SOC_convolution_c++/conv_28.cpp:7->SOC_convolution_c++/operation.cpp:16]   --->   Core 14 'AddSub' <Latency = 0> <II = 1> <Delay = 1.27> <FuncUnit> <Opcode : 'add' 'sub'> <InPorts = 2> <OutPorts = 1>
+ST_2 : Operation 64 [1/1] (0.00ns)   --->   "br i1 %exitcond1_i, label %conv1.exit.preheader, label %.preheader.preheader.i" [SOC_convolution_c++/conv_28.cpp:7->SOC_convolution_c++/operation.cpp:16]
+ST_2 : Operation 65 [1/1] (0.00ns)   --->   "%tmp_i = call i5 @_ssdm_op_BitConcatenate.i5.i4.i1(i4 %i_i, i1 false)" [SOC_convolution_c++/conv_28.cpp:9->SOC_convolution_c++/operation.cpp:16]
+ST_2 : Operation 66 [1/1] (0.00ns)   --->   "%tmp = call i10 @_ssdm_op_BitConcatenate.i10.i4.i6(i4 %i_i, i6 0)" [SOC_convolution_c++/conv_28.cpp:7->SOC_convolution_c++/operation.cpp:16]
+ST_2 : Operation 67 [1/1] (0.00ns)   --->   "%p_shl4_cast = zext i10 %tmp to i11" [SOC_convolution_c++/conv_28.cpp:7->SOC_convolution_c++/operation.cpp:16]
+ST_2 : Operation 68 [1/1] (0.00ns)   --->   "%tmp_9 = call i7 @_ssdm_op_BitConcatenate.i7.i4.i3(i4 %i_i, i3 0)" [SOC_convolution_c++/conv_28.cpp:7->SOC_convolution_c++/operation.cpp:16]
+ST_2 : Operation 69 [1/1] (0.00ns)   --->   "%p_shl5_cast = zext i7 %tmp_9 to i11" [SOC_convolution_c++/conv_28.cpp:9->SOC_convolution_c++/operation.cpp:16]
+ST_2 : Operation 70 [1/1] (1.34ns)   --->   "%tmp_s = sub i11 %p_shl4_cast, %p_shl5_cast" [SOC_convolution_c++/conv_28.cpp:9->SOC_convolution_c++/operation.cpp:16]   --->   Core 14 'AddSub' <Latency = 0> <II = 1> <Delay = 1.27> <FuncUnit> <Opcode : 'add' 'sub'> <InPorts = 2> <OutPorts = 1>
+ST_2 : Operation 71 [1/1] (0.00ns)   --->   "%tmp_16_i = or i5 %tmp_i, 1" [SOC_convolution_c++/conv_28.cpp:9->SOC_convolution_c++/operation.cpp:16]
+ST_2 : Operation 72 [1/1] (0.00ns)   --->   "%tmp_1 = call i10 @_ssdm_op_BitConcatenate.i10.i5.i5(i5 %tmp_16_i, i5 0)" [SOC_convolution_c++/conv_28.cpp:9->SOC_convolution_c++/operation.cpp:16]
+ST_2 : Operation 73 [1/1] (0.00ns)   --->   "%p_shl2_cast = zext i10 %tmp_1 to i11" [SOC_convolution_c++/conv_28.cpp:9->SOC_convolution_c++/operation.cpp:16]
+ST_2 : Operation 74 [1/1] (0.00ns)   --->   "%tmp_6 = call i7 @_ssdm_op_BitConcatenate.i7.i5.i2(i5 %tmp_16_i, i2 0)" [SOC_convolution_c++/conv_28.cpp:9->SOC_convolution_c++/operation.cpp:16]
+ST_2 : Operation 75 [1/1] (0.00ns)   --->   "%p_shl3_cast = zext i7 %tmp_6 to i11" [SOC_convolution_c++/conv_28.cpp:9->SOC_convolution_c++/operation.cpp:16]
+ST_2 : Operation 76 [1/1] (1.34ns)   --->   "%tmp_7 = sub i11 %p_shl2_cast, %p_shl3_cast" [SOC_convolution_c++/conv_28.cpp:9->SOC_convolution_c++/operation.cpp:16]   --->   Core 14 'AddSub' <Latency = 0> <II = 1> <Delay = 1.27> <FuncUnit> <Opcode : 'add' 'sub'> <InPorts = 2> <OutPorts = 1>
+ST_2 : Operation 77 [1/1] (0.00ns)   --->   "%tmp_8 = call i8 @_ssdm_op_BitConcatenate.i8.i4.i4(i4 %i_i, i4 0)" [SOC_convolution_c++/conv_28.cpp:7->SOC_convolution_c++/operation.cpp:16]
+ST_2 : Operation 78 [1/1] (0.00ns)   --->   "%p_shl_cast = zext i8 %tmp_8 to i9" [SOC_convolution_c++/conv_28.cpp:9->SOC_convolution_c++/operation.cpp:16]
+ST_2 : Operation 79 [1/1] (0.00ns)   --->   "%p_shl1_cast = zext i5 %tmp_i to i9" [SOC_convolution_c++/conv_28.cpp:9->SOC_convolution_c++/operation.cpp:16]
+ST_2 : Operation 80 [1/1] (1.35ns)   --->   "%tmp_10 = sub i9 %p_shl_cast, %p_shl1_cast" [SOC_convolution_c++/conv_28.cpp:9->SOC_convolution_c++/operation.cpp:16]   --->   Core 14 'AddSub' <Latency = 0> <II = 1> <Delay = 1.27> <FuncUnit> <Opcode : 'add' 'sub'> <InPorts = 2> <OutPorts = 1>
+ST_2 : Operation 81 [1/1] (0.85ns)   --->   "br label %.preheader.i" [SOC_convolution_c++/conv_28.cpp:8->SOC_convolution_c++/operation.cpp:16]
+ST_2 : Operation 82 [1/1] (0.85ns)   --->   "br label %conv1.exit" [SOC_convolution_c++/operation.cpp:18]
+
+ <State 3> : 3.61ns
+ST_3 : Operation 83 [1/1] (0.00ns)   --->   "%j_i = phi i4 [ %j_1, %1 ], [ 0, %.preheader.preheader.i ]"
+ST_3 : Operation 84 [1/1] (0.87ns)   --->   "%exitcond_i = icmp eq i4 %j_i, -2" [SOC_convolution_c++/conv_28.cpp:8->SOC_convolution_c++/operation.cpp:16]   --->   Core 25 'Cmp' <Latency = 0> <II = 1> <Delay = 0.67> <FuncUnit> <Opcode : 'icmp'> <InPorts = 2> <OutPorts = 1>
+ST_3 : Operation 85 [1/1] (0.00ns)   --->   "%empty_3 = call i32 (...)* @_ssdm_op_SpecLoopTripCount(i64 14, i64 14, i64 14) nounwind"
+ST_3 : Operation 86 [1/1] (1.01ns)   --->   "%j_1 = add i4 %j_i, 1" [SOC_convolution_c++/conv_28.cpp:8->SOC_convolution_c++/operation.cpp:16]   --->   Core 14 'AddSub' <Latency = 0> <II = 1> <Delay = 1.27> <FuncUnit> <Opcode : 'add' 'sub'> <InPorts = 2> <OutPorts = 1>
+ST_3 : Operation 87 [1/1] (0.00ns)   --->   "br i1 %exitcond_i, label %.loopexit.loopexit, label %1" [SOC_convolution_c++/conv_28.cpp:8->SOC_convolution_c++/operation.cpp:16]
+ST_3 : Operation 88 [1/1] (0.00ns)   --->   "%tmp_19_i = call i5 @_ssdm_op_BitConcatenate.i5.i4.i1(i4 %j_i, i1 false)" [SOC_convolution_c++/conv_28.cpp:9->SOC_convolution_c++/operation.cpp:16]
+ST_3 : Operation 89 [1/1] (0.00ns)   --->   "%tmp_20_i_cast = zext i5 %tmp_19_i to i11" [SOC_convolution_c++/conv_28.cpp:9->SOC_convolution_c++/operation.cpp:16]
+ST_3 : Operation 90 [1/1] (1.33ns)   --->   "%tmp_14 = add i11 %tmp_20_i_cast, %tmp_s" [SOC_convolution_c++/conv_28.cpp:9->SOC_convolution_c++/operation.cpp:16]   --->   Core 14 'AddSub' <Latency = 0> <II = 1> <Delay = 1.27> <FuncUnit> <Opcode : 'add' 'sub'> <InPorts = 2> <OutPorts = 1>
+ST_3 : Operation 91 [1/1] (0.00ns)   --->   "%tmp_20_cast = sext i11 %tmp_14 to i64" [SOC_convolution_c++/conv_28.cpp:9->SOC_convolution_c++/operation.cpp:16]
+ST_3 : Operation 92 [1/1] (0.00ns)   --->   "%ip_addr = getelementptr [784 x double]* %ip, i64 0, i64 %tmp_20_cast" [SOC_convolution_c++/conv_28.cpp:9->SOC_convolution_c++/operation.cpp:16]
+ST_3 : Operation 93 [1/1] (1.33ns)   --->   "%tmp_15 = add i11 %tmp_20_i_cast, %tmp_7" [SOC_convolution_c++/conv_28.cpp:9->SOC_convolution_c++/operation.cpp:16]   --->   Core 14 'AddSub' <Latency = 0> <II = 1> <Delay = 1.27> <FuncUnit> <Opcode : 'add' 'sub'> <InPorts = 2> <OutPorts = 1>
+ST_3 : Operation 94 [2/2] (2.26ns)   --->   "%ip_load = load double* %ip_addr, align 8" [SOC_convolution_c++/conv_28.cpp:9->SOC_convolution_c++/operation.cpp:16]   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 2.26> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 64> <Depth = 49> <RAM>
+ST_3 : Operation 95 [1/1] (0.00ns)   --->   "%tmp_22_i = or i5 %tmp_19_i, 1" [SOC_convolution_c++/conv_28.cpp:9->SOC_convolution_c++/operation.cpp:16]
+ST_3 : Operation 96 [1/1] (0.00ns)   --->   "%tmp_23_i_cast = zext i5 %tmp_22_i to i11" [SOC_convolution_c++/conv_28.cpp:9->SOC_convolution_c++/operation.cpp:16]
+ST_3 : Operation 97 [1/1] (1.33ns)   --->   "%tmp_16 = add i11 %tmp_23_i_cast, %tmp_s" [SOC_convolution_c++/conv_28.cpp:9->SOC_convolution_c++/operation.cpp:16]   --->   Core 14 'AddSub' <Latency = 0> <II = 1> <Delay = 1.27> <FuncUnit> <Opcode : 'add' 'sub'> <InPorts = 2> <OutPorts = 1>
+ST_3 : Operation 98 [1/1] (0.00ns)   --->   "%tmp_22_cast = sext i11 %tmp_16 to i64" [SOC_convolution_c++/conv_28.cpp:9->SOC_convolution_c++/operation.cpp:16]
+ST_3 : Operation 99 [1/1] (0.00ns)   --->   "%ip_addr_1 = getelementptr [784 x double]* %ip, i64 0, i64 %tmp_22_cast" [SOC_convolution_c++/conv_28.cpp:9->SOC_convolution_c++/operation.cpp:16]
+ST_3 : Operation 100 [1/1] (1.33ns)   --->   "%tmp_17 = add i11 %tmp_23_i_cast, %tmp_7" [SOC_convolution_c++/conv_28.cpp:9->SOC_convolution_c++/operation.cpp:16]   --->   Core 14 'AddSub' <Latency = 0> <II = 1> <Delay = 1.27> <FuncUnit> <Opcode : 'add' 'sub'> <InPorts = 2> <OutPorts = 1>
+ST_3 : Operation 101 [2/2] (2.26ns)   --->   "%ip_load_1 = load double* %ip_addr_1, align 8" [SOC_convolution_c++/conv_28.cpp:9->SOC_convolution_c++/operation.cpp:16]   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 2.26> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 64> <Depth = 49> <RAM>
+ST_3 : Operation 102 [1/1] (0.00ns)   --->   "%tmp_30_i_cast = zext i4 %j_i to i9" [SOC_convolution_c++/conv_28.cpp:9->SOC_convolution_c++/operation.cpp:16]
+ST_3 : Operation 103 [1/1] (1.35ns)   --->   "%tmp_18 = add i9 %tmp_30_i_cast, %tmp_10" [SOC_convolution_c++/conv_28.cpp:9->SOC_convolution_c++/operation.cpp:16]   --->   Core 14 'AddSub' <Latency = 0> <II = 1> <Delay = 1.27> <FuncUnit> <Opcode : 'add' 'sub'> <InPorts = 2> <OutPorts = 1>
+ST_3 : Operation 104 [1/1] (0.00ns)   --->   "br label %.loopexit"
+
+ <State 4> : 2.27ns
+ST_4 : Operation 105 [1/2] (2.26ns)   --->   "%ip_load = load double* %ip_addr, align 8" [SOC_convolution_c++/conv_28.cpp:9->SOC_convolution_c++/operation.cpp:16]   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 2.26> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 64> <Depth = 49> <RAM>
+ST_4 : Operation 106 [1/2] (2.26ns)   --->   "%ip_load_1 = load double* %ip_addr_1, align 8" [SOC_convolution_c++/conv_28.cpp:9->SOC_convolution_c++/operation.cpp:16]   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 2.26> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 64> <Depth = 49> <RAM>
+
+ <State 5> : 7.15ns
+ST_5 : Operation 107 [5/5] (7.14ns)   --->   "%tmp_21_i = fmul double %ip_load, 9.147772e-02" [SOC_convolution_c++/conv_28.cpp:9->SOC_convolution_c++/operation.cpp:16]   --->   Core 110 'DMul' <Latency = 4> <II = 1> <Delay = 7.14> <FuncUnit> <Opcode : 'dmul'> <InPorts = 2> <OutPorts = 1>
+ST_5 : Operation 108 [5/5] (7.14ns)   --->   "%tmp_24_i = fmul double %ip_load_1, 8.124895e-02" [SOC_convolution_c++/conv_28.cpp:9->SOC_convolution_c++/operation.cpp:16]   --->   Core 110 'DMul' <Latency = 4> <II = 1> <Delay = 7.14> <FuncUnit> <Opcode : 'dmul'> <InPorts = 2> <OutPorts = 1>
+
+ <State 6> : 7.15ns
+ST_6 : Operation 109 [4/5] (7.14ns)   --->   "%tmp_21_i = fmul double %ip_load, 9.147772e-02" [SOC_convolution_c++/conv_28.cpp:9->SOC_convolution_c++/operation.cpp:16]   --->   Core 110 'DMul' <Latency = 4> <II = 1> <Delay = 7.14> <FuncUnit> <Opcode : 'dmul'> <InPorts = 2> <OutPorts = 1>
+ST_6 : Operation 110 [4/5] (7.14ns)   --->   "%tmp_24_i = fmul double %ip_load_1, 8.124895e-02" [SOC_convolution_c++/conv_28.cpp:9->SOC_convolution_c++/operation.cpp:16]   --->   Core 110 'DMul' <Latency = 4> <II = 1> <Delay = 7.14> <FuncUnit> <Opcode : 'dmul'> <InPorts = 2> <OutPorts = 1>
+
+ <State 7> : 7.15ns
+ST_7 : Operation 111 [1/1] (0.00ns)   --->   "%tmp_21_cast = sext i11 %tmp_15 to i64" [SOC_convolution_c++/conv_28.cpp:9->SOC_convolution_c++/operation.cpp:16]
+ST_7 : Operation 112 [1/1] (0.00ns)   --->   "%ip_addr_2 = getelementptr [784 x double]* %ip, i64 0, i64 %tmp_21_cast" [SOC_convolution_c++/conv_28.cpp:9->SOC_convolution_c++/operation.cpp:16]
+ST_7 : Operation 113 [3/5] (7.14ns)   --->   "%tmp_21_i = fmul double %ip_load, 9.147772e-02" [SOC_convolution_c++/conv_28.cpp:9->SOC_convolution_c++/operation.cpp:16]   --->   Core 110 'DMul' <Latency = 4> <II = 1> <Delay = 7.14> <FuncUnit> <Opcode : 'dmul'> <InPorts = 2> <OutPorts = 1>
+ST_7 : Operation 114 [3/5] (7.14ns)   --->   "%tmp_24_i = fmul double %ip_load_1, 8.124895e-02" [SOC_convolution_c++/conv_28.cpp:9->SOC_convolution_c++/operation.cpp:16]   --->   Core 110 'DMul' <Latency = 4> <II = 1> <Delay = 7.14> <FuncUnit> <Opcode : 'dmul'> <InPorts = 2> <OutPorts = 1>
+ST_7 : Operation 115 [2/2] (2.26ns)   --->   "%ip_load_2 = load double* %ip_addr_2, align 8" [SOC_convolution_c++/conv_28.cpp:9->SOC_convolution_c++/operation.cpp:16]   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 2.26> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 64> <Depth = 49> <RAM>
+
+ <State 8> : 7.15ns
+ST_8 : Operation 116 [2/5] (7.14ns)   --->   "%tmp_21_i = fmul double %ip_load, 9.147772e-02" [SOC_convolution_c++/conv_28.cpp:9->SOC_convolution_c++/operation.cpp:16]   --->   Core 110 'DMul' <Latency = 4> <II = 1> <Delay = 7.14> <FuncUnit> <Opcode : 'dmul'> <InPorts = 2> <OutPorts = 1>
+ST_8 : Operation 117 [2/5] (7.14ns)   --->   "%tmp_24_i = fmul double %ip_load_1, 8.124895e-02" [SOC_convolution_c++/conv_28.cpp:9->SOC_convolution_c++/operation.cpp:16]   --->   Core 110 'DMul' <Latency = 4> <II = 1> <Delay = 7.14> <FuncUnit> <Opcode : 'dmul'> <InPorts = 2> <OutPorts = 1>
+ST_8 : Operation 118 [1/2] (2.26ns)   --->   "%ip_load_2 = load double* %ip_addr_2, align 8" [SOC_convolution_c++/conv_28.cpp:9->SOC_convolution_c++/operation.cpp:16]   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 2.26> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 64> <Depth = 49> <RAM>
+
+ <State 9> : 7.15ns
+ST_9 : Operation 119 [1/5] (7.14ns)   --->   "%tmp_21_i = fmul double %ip_load, 9.147772e-02" [SOC_convolution_c++/conv_28.cpp:9->SOC_convolution_c++/operation.cpp:16]   --->   Core 110 'DMul' <Latency = 4> <II = 1> <Delay = 7.14> <FuncUnit> <Opcode : 'dmul'> <InPorts = 2> <OutPorts = 1>
+ST_9 : Operation 120 [1/5] (7.14ns)   --->   "%tmp_24_i = fmul double %ip_load_1, 8.124895e-02" [SOC_convolution_c++/conv_28.cpp:9->SOC_convolution_c++/operation.cpp:16]   --->   Core 110 'DMul' <Latency = 4> <II = 1> <Delay = 7.14> <FuncUnit> <Opcode : 'dmul'> <InPorts = 2> <OutPorts = 1>
+ST_9 : Operation 121 [5/5] (7.14ns)   --->   "%tmp_26_i = fmul double %ip_load_2, 0xBFCA408266A2207C" [SOC_convolution_c++/conv_28.cpp:9->SOC_convolution_c++/operation.cpp:16]   --->   Core 110 'DMul' <Latency = 4> <II = 1> <Delay = 7.14> <FuncUnit> <Opcode : 'dmul'> <InPorts = 2> <OutPorts = 1>
+
+ <State 10> : 8.42ns
+ST_10 : Operation 122 [4/4] (8.42ns)   --->   "%tmp_25_i = fadd double %tmp_21_i, %tmp_24_i" [SOC_convolution_c++/conv_28.cpp:9->SOC_convolution_c++/operation.cpp:16]   --->   Core 109 'DAddSub' <Latency = 3> <II = 1> <Delay = 8.42> <FuncUnit> <Opcode : 'dadd' 'dsub'> <InPorts = 2> <OutPorts = 1>
+ST_10 : Operation 123 [4/5] (7.14ns)   --->   "%tmp_26_i = fmul double %ip_load_2, 0xBFCA408266A2207C" [SOC_convolution_c++/conv_28.cpp:9->SOC_convolution_c++/operation.cpp:16]   --->   Core 110 'DMul' <Latency = 4> <II = 1> <Delay = 7.14> <FuncUnit> <Opcode : 'dmul'> <InPorts = 2> <OutPorts = 1>
+
+ <State 11> : 8.42ns
+ST_11 : Operation 124 [1/1] (0.00ns)   --->   "%tmp_23_cast = sext i11 %tmp_17 to i64" [SOC_convolution_c++/conv_28.cpp:9->SOC_convolution_c++/operation.cpp:16]
+ST_11 : Operation 125 [1/1] (0.00ns)   --->   "%ip_addr_3 = getelementptr [784 x double]* %ip, i64 0, i64 %tmp_23_cast" [SOC_convolution_c++/conv_28.cpp:9->SOC_convolution_c++/operation.cpp:16]
+ST_11 : Operation 126 [3/4] (8.42ns)   --->   "%tmp_25_i = fadd double %tmp_21_i, %tmp_24_i" [SOC_convolution_c++/conv_28.cpp:9->SOC_convolution_c++/operation.cpp:16]   --->   Core 109 'DAddSub' <Latency = 3> <II = 1> <Delay = 8.42> <FuncUnit> <Opcode : 'dadd' 'dsub'> <InPorts = 2> <OutPorts = 1>
+ST_11 : Operation 127 [3/5] (7.14ns)   --->   "%tmp_26_i = fmul double %ip_load_2, 0xBFCA408266A2207C" [SOC_convolution_c++/conv_28.cpp:9->SOC_convolution_c++/operation.cpp:16]   --->   Core 110 'DMul' <Latency = 4> <II = 1> <Delay = 7.14> <FuncUnit> <Opcode : 'dmul'> <InPorts = 2> <OutPorts = 1>
+ST_11 : Operation 128 [2/2] (2.26ns)   --->   "%ip_load_3 = load double* %ip_addr_3, align 8" [SOC_convolution_c++/conv_28.cpp:9->SOC_convolution_c++/operation.cpp:16]   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 2.26> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 64> <Depth = 49> <RAM>
+
+ <State 12> : 8.42ns
+ST_12 : Operation 129 [2/4] (8.42ns)   --->   "%tmp_25_i = fadd double %tmp_21_i, %tmp_24_i" [SOC_convolution_c++/conv_28.cpp:9->SOC_convolution_c++/operation.cpp:16]   --->   Core 109 'DAddSub' <Latency = 3> <II = 1> <Delay = 8.42> <FuncUnit> <Opcode : 'dadd' 'dsub'> <InPorts = 2> <OutPorts = 1>
+ST_12 : Operation 130 [2/5] (7.14ns)   --->   "%tmp_26_i = fmul double %ip_load_2, 0xBFCA408266A2207C" [SOC_convolution_c++/conv_28.cpp:9->SOC_convolution_c++/operation.cpp:16]   --->   Core 110 'DMul' <Latency = 4> <II = 1> <Delay = 7.14> <FuncUnit> <Opcode : 'dmul'> <InPorts = 2> <OutPorts = 1>
+ST_12 : Operation 131 [1/2] (2.26ns)   --->   "%ip_load_3 = load double* %ip_addr_3, align 8" [SOC_convolution_c++/conv_28.cpp:9->SOC_convolution_c++/operation.cpp:16]   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 2.26> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 64> <Depth = 49> <RAM>
+
+ <State 13> : 8.42ns
+ST_13 : Operation 132 [1/4] (8.42ns)   --->   "%tmp_25_i = fadd double %tmp_21_i, %tmp_24_i" [SOC_convolution_c++/conv_28.cpp:9->SOC_convolution_c++/operation.cpp:16]   --->   Core 109 'DAddSub' <Latency = 3> <II = 1> <Delay = 8.42> <FuncUnit> <Opcode : 'dadd' 'dsub'> <InPorts = 2> <OutPorts = 1>
+ST_13 : Operation 133 [1/5] (7.14ns)   --->   "%tmp_26_i = fmul double %ip_load_2, 0xBFCA408266A2207C" [SOC_convolution_c++/conv_28.cpp:9->SOC_convolution_c++/operation.cpp:16]   --->   Core 110 'DMul' <Latency = 4> <II = 1> <Delay = 7.14> <FuncUnit> <Opcode : 'dmul'> <InPorts = 2> <OutPorts = 1>
+ST_13 : Operation 134 [5/5] (7.14ns)   --->   "%tmp_28_i = fmul double %ip_load_3, -4.164300e-03" [SOC_convolution_c++/conv_28.cpp:9->SOC_convolution_c++/operation.cpp:16]   --->   Core 110 'DMul' <Latency = 4> <II = 1> <Delay = 7.14> <FuncUnit> <Opcode : 'dmul'> <InPorts = 2> <OutPorts = 1>
+
+ <State 14> : 8.42ns
+ST_14 : Operation 135 [4/4] (8.42ns)   --->   "%tmp_27_i = fadd double %tmp_25_i, %tmp_26_i" [SOC_convolution_c++/conv_28.cpp:9->SOC_convolution_c++/operation.cpp:16]   --->   Core 109 'DAddSub' <Latency = 3> <II = 1> <Delay = 8.42> <FuncUnit> <Opcode : 'dadd' 'dsub'> <InPorts = 2> <OutPorts = 1>
+ST_14 : Operation 136 [4/5] (7.14ns)   --->   "%tmp_28_i = fmul double %ip_load_3, -4.164300e-03" [SOC_convolution_c++/conv_28.cpp:9->SOC_convolution_c++/operation.cpp:16]   --->   Core 110 'DMul' <Latency = 4> <II = 1> <Delay = 7.14> <FuncUnit> <Opcode : 'dmul'> <InPorts = 2> <OutPorts = 1>
+
+ <State 15> : 8.42ns
+ST_15 : Operation 137 [3/4] (8.42ns)   --->   "%tmp_27_i = fadd double %tmp_25_i, %tmp_26_i" [SOC_convolution_c++/conv_28.cpp:9->SOC_convolution_c++/operation.cpp:16]   --->   Core 109 'DAddSub' <Latency = 3> <II = 1> <Delay = 8.42> <FuncUnit> <Opcode : 'dadd' 'dsub'> <InPorts = 2> <OutPorts = 1>
+ST_15 : Operation 138 [3/5] (7.14ns)   --->   "%tmp_28_i = fmul double %ip_load_3, -4.164300e-03" [SOC_convolution_c++/conv_28.cpp:9->SOC_convolution_c++/operation.cpp:16]   --->   Core 110 'DMul' <Latency = 4> <II = 1> <Delay = 7.14> <FuncUnit> <Opcode : 'dmul'> <InPorts = 2> <OutPorts = 1>
+
+ <State 16> : 8.42ns
+ST_16 : Operation 139 [2/4] (8.42ns)   --->   "%tmp_27_i = fadd double %tmp_25_i, %tmp_26_i" [SOC_convolution_c++/conv_28.cpp:9->SOC_convolution_c++/operation.cpp:16]   --->   Core 109 'DAddSub' <Latency = 3> <II = 1> <Delay = 8.42> <FuncUnit> <Opcode : 'dadd' 'dsub'> <InPorts = 2> <OutPorts = 1>
+ST_16 : Operation 140 [2/5] (7.14ns)   --->   "%tmp_28_i = fmul double %ip_load_3, -4.164300e-03" [SOC_convolution_c++/conv_28.cpp:9->SOC_convolution_c++/operation.cpp:16]   --->   Core 110 'DMul' <Latency = 4> <II = 1> <Delay = 7.14> <FuncUnit> <Opcode : 'dmul'> <InPorts = 2> <OutPorts = 1>
+
+ <State 17> : 8.42ns
+ST_17 : Operation 141 [1/4] (8.42ns)   --->   "%tmp_27_i = fadd double %tmp_25_i, %tmp_26_i" [SOC_convolution_c++/conv_28.cpp:9->SOC_convolution_c++/operation.cpp:16]   --->   Core 109 'DAddSub' <Latency = 3> <II = 1> <Delay = 8.42> <FuncUnit> <Opcode : 'dadd' 'dsub'> <InPorts = 2> <OutPorts = 1>
+ST_17 : Operation 142 [1/5] (7.14ns)   --->   "%tmp_28_i = fmul double %ip_load_3, -4.164300e-03" [SOC_convolution_c++/conv_28.cpp:9->SOC_convolution_c++/operation.cpp:16]   --->   Core 110 'DMul' <Latency = 4> <II = 1> <Delay = 7.14> <FuncUnit> <Opcode : 'dmul'> <InPorts = 2> <OutPorts = 1>
+
+ <State 18> : 8.42ns
+ST_18 : Operation 143 [4/4] (8.42ns)   --->   "%tmp_29_i = fadd double %tmp_27_i, %tmp_28_i" [SOC_convolution_c++/conv_28.cpp:9->SOC_convolution_c++/operation.cpp:16]   --->   Core 109 'DAddSub' <Latency = 3> <II = 1> <Delay = 8.42> <FuncUnit> <Opcode : 'dadd' 'dsub'> <InPorts = 2> <OutPorts = 1>
+
+ <State 19> : 8.42ns
+ST_19 : Operation 144 [3/4] (8.42ns)   --->   "%tmp_29_i = fadd double %tmp_27_i, %tmp_28_i" [SOC_convolution_c++/conv_28.cpp:9->SOC_convolution_c++/operation.cpp:16]   --->   Core 109 'DAddSub' <Latency = 3> <II = 1> <Delay = 8.42> <FuncUnit> <Opcode : 'dadd' 'dsub'> <InPorts = 2> <OutPorts = 1>
+
+ <State 20> : 8.42ns
+ST_20 : Operation 145 [2/4] (8.42ns)   --->   "%tmp_29_i = fadd double %tmp_27_i, %tmp_28_i" [SOC_convolution_c++/conv_28.cpp:9->SOC_convolution_c++/operation.cpp:16]   --->   Core 109 'DAddSub' <Latency = 3> <II = 1> <Delay = 8.42> <FuncUnit> <Opcode : 'dadd' 'dsub'> <InPorts = 2> <OutPorts = 1>
+
+ <State 21> : 8.42ns
+ST_21 : Operation 146 [1/4] (8.42ns)   --->   "%tmp_29_i = fadd double %tmp_27_i, %tmp_28_i" [SOC_convolution_c++/conv_28.cpp:9->SOC_convolution_c++/operation.cpp:16]   --->   Core 109 'DAddSub' <Latency = 3> <II = 1> <Delay = 8.42> <FuncUnit> <Opcode : 'dadd' 'dsub'> <InPorts = 2> <OutPorts = 1>
+
+ <State 22> : 2.27ns
+ST_22 : Operation 147 [1/1] (0.00ns)   --->   "%tmp_24_cast = sext i9 %tmp_18 to i64" [SOC_convolution_c++/conv_28.cpp:9->SOC_convolution_c++/operation.cpp:16]
+ST_22 : Operation 148 [1/1] (0.00ns)   --->   "%out_data_1_addr_1 = getelementptr [196 x double]* @out_data_1, i64 0, i64 %tmp_24_cast" [SOC_convolution_c++/conv_28.cpp:9->SOC_convolution_c++/operation.cpp:16]
+ST_22 : Operation 149 [1/1] (2.26ns)   --->   "store double %tmp_29_i, double* %out_data_1_addr_1, align 8" [SOC_convolution_c++/conv_28.cpp:9->SOC_convolution_c++/operation.cpp:16]   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 2.26> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 64> <Depth = 49> <RAM>
+ST_22 : Operation 150 [1/1] (0.00ns)   --->   "br label %.preheader.i" [SOC_convolution_c++/conv_28.cpp:8->SOC_convolution_c++/operation.cpp:16]
+
+ <State 23> : 1.36ns
+ST_23 : Operation 151 [1/1] (0.00ns)   --->   "%i = phi i4 [ %i_3, %conv1.exit.loopexit ], [ 0, %conv1.exit.preheader ]"
+ST_23 : Operation 152 [1/1] (0.00ns)   --->   "%counter_buffer1 = phi i8 [ %counter_buffer1_2, %conv1.exit.loopexit ], [ 0, %conv1.exit.preheader ]"
+ST_23 : Operation 153 [1/1] (0.87ns)   --->   "%exitcond5 = icmp eq i4 %i, -2" [SOC_convolution_c++/operation.cpp:18]   --->   Core 25 'Cmp' <Latency = 0> <II = 1> <Delay = 0.67> <FuncUnit> <Opcode : 'icmp'> <InPorts = 2> <OutPorts = 1>
+ST_23 : Operation 154 [1/1] (0.00ns)   --->   "%empty_4 = call i32 (...)* @_ssdm_op_SpecLoopTripCount(i64 14, i64 14, i64 14) nounwind"
+ST_23 : Operation 155 [1/1] (1.01ns)   --->   "%i_3 = add i4 %i, 1" [SOC_convolution_c++/operation.cpp:18]   --->   Core 14 'AddSub' <Latency = 0> <II = 1> <Delay = 1.27> <FuncUnit> <Opcode : 'add' 'sub'> <InPorts = 2> <OutPorts = 1>
+ST_23 : Operation 156 [1/1] (0.00ns)   --->   "br i1 %exitcond5, label %.preheader13.preheader, label %2" [SOC_convolution_c++/operation.cpp:18]
+ST_23 : Operation 157 [1/1] (1.35ns)   --->   "%counter_buffer1_2 = add i8 %counter_buffer1, 14" [SOC_convolution_c++/operation.cpp:21]   --->   Core 14 'AddSub' <Latency = 0> <II = 1> <Delay = 1.27> <FuncUnit> <Opcode : 'add' 'sub'> <InPorts = 2> <OutPorts = 1>
+ST_23 : Operation 158 [1/1] (0.00ns)   --->   "%tmp_11 = call i8 @_ssdm_op_BitConcatenate.i8.i4.i4(i4 %i, i4 0)" [SOC_convolution_c++/operation.cpp:18]
+ST_23 : Operation 159 [1/1] (0.00ns)   --->   "%p_shl6_cast = zext i8 %tmp_11 to i9" [SOC_convolution_c++/operation.cpp:18]
+ST_23 : Operation 160 [1/1] (0.00ns)   --->   "%tmp_12 = call i5 @_ssdm_op_BitConcatenate.i5.i4.i1(i4 %i, i1 false)" [SOC_convolution_c++/operation.cpp:18]
+ST_23 : Operation 161 [1/1] (0.00ns)   --->   "%p_shl7_cast = zext i5 %tmp_12 to i9" [SOC_convolution_c++/operation.cpp:21]
+ST_23 : Operation 162 [1/1] (1.35ns)   --->   "%tmp_13 = sub i9 %p_shl6_cast, %p_shl7_cast" [SOC_convolution_c++/operation.cpp:21]   --->   Core 14 'AddSub' <Latency = 0> <II = 1> <Delay = 1.27> <FuncUnit> <Opcode : 'add' 'sub'> <InPorts = 2> <OutPorts = 1>
+ST_23 : Operation 163 [1/1] (0.85ns)   --->   "br label %3" [SOC_convolution_c++/operation.cpp:19]
+ST_23 : Operation 164 [1/1] (0.85ns)   --->   "br label %.preheader13" [SOC_convolution_c++/fifo.cpp:6->SOC_convolution_c++/operation.cpp:28]
+
+ <State 24> : 3.62ns
+ST_24 : Operation 165 [1/1] (0.00ns)   --->   "%j = phi i4 [ 0, %2 ], [ %j_2, %4 ]"
+ST_24 : Operation 166 [1/1] (0.00ns)   --->   "%counter_buffer1_1 = phi i8 [ %counter_buffer1, %2 ], [ %tmp_2, %4 ]" [SOC_convolution_c++/operation.cpp:21]
+ST_24 : Operation 167 [1/1] (0.87ns)   --->   "%exitcond4 = icmp eq i4 %j, -2" [SOC_convolution_c++/operation.cpp:19]   --->   Core 25 'Cmp' <Latency = 0> <II = 1> <Delay = 0.67> <FuncUnit> <Opcode : 'icmp'> <InPorts = 2> <OutPorts = 1>
+ST_24 : Operation 168 [1/1] (0.00ns)   --->   "%empty_5 = call i32 (...)* @_ssdm_op_SpecLoopTripCount(i64 14, i64 14, i64 14) nounwind"
+ST_24 : Operation 169 [1/1] (1.01ns)   --->   "%j_2 = add i4 %j, 1" [SOC_convolution_c++/operation.cpp:19]   --->   Core 14 'AddSub' <Latency = 0> <II = 1> <Delay = 1.27> <FuncUnit> <Opcode : 'add' 'sub'> <InPorts = 2> <OutPorts = 1>
+ST_24 : Operation 170 [1/1] (0.00ns)   --->   "br i1 %exitcond4, label %conv1.exit.loopexit, label %4" [SOC_convolution_c++/operation.cpp:19]
+ST_24 : Operation 171 [1/1] (0.00ns)   --->   "%tmp_1_cast = zext i4 %j to i9" [SOC_convolution_c++/operation.cpp:21]
+ST_24 : Operation 172 [1/1] (1.35ns)   --->   "%tmp_19 = add i9 %tmp_13, %tmp_1_cast" [SOC_convolution_c++/operation.cpp:21]   --->   Core 14 'AddSub' <Latency = 0> <II = 1> <Delay = 1.27> <FuncUnit> <Opcode : 'add' 'sub'> <InPorts = 2> <OutPorts = 1>
+ST_24 : Operation 173 [1/1] (0.00ns)   --->   "%tmp_25_cast = sext i9 %tmp_19 to i64" [SOC_convolution_c++/operation.cpp:21]
+ST_24 : Operation 174 [1/1] (0.00ns)   --->   "%out_data_1_addr = getelementptr [196 x double]* @out_data_1, i64 0, i64 %tmp_25_cast" [SOC_convolution_c++/operation.cpp:21]
+ST_24 : Operation 175 [2/2] (2.26ns)   --->   "%out_data_1_load = load double* %out_data_1_addr, align 8" [SOC_convolution_c++/operation.cpp:21]   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 2.26> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 64> <Depth = 49> <RAM>
+ST_24 : Operation 176 [1/1] (0.00ns)   --->   "br label %conv1.exit"
+
+ <State 25> : 4.53ns
+ST_25 : Operation 177 [1/2] (2.26ns)   --->   "%out_data_1_load = load double* %out_data_1_addr, align 8" [SOC_convolution_c++/operation.cpp:21]   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 2.26> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 64> <Depth = 49> <RAM>
+ST_25 : Operation 178 [1/1] (1.35ns)   --->   "%tmp_2 = add i8 %counter_buffer1_1, 1" [SOC_convolution_c++/operation.cpp:21]   --->   Core 14 'AddSub' <Latency = 0> <II = 1> <Delay = 1.27> <FuncUnit> <Opcode : 'add' 'sub'> <InPorts = 2> <OutPorts = 1>
+ST_25 : Operation 179 [1/1] (0.00ns)   --->   "%tmp_3 = zext i8 %counter_buffer1_1 to i64" [SOC_convolution_c++/operation.cpp:21]
+ST_25 : Operation 180 [1/1] (0.00ns)   --->   "%fifo_in_temp_addr = getelementptr inbounds [196 x double]* %fifo_in_temp, i64 0, i64 %tmp_3" [SOC_convolution_c++/operation.cpp:21]
+ST_25 : Operation 181 [1/1] (2.26ns)   --->   "store double %out_data_1_load, double* %fifo_in_temp_addr, align 8" [SOC_convolution_c++/operation.cpp:21]   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 2.26> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 64> <Depth = 49> <RAM>
+ST_25 : Operation 182 [1/1] (0.00ns)   --->   "br label %3" [SOC_convolution_c++/operation.cpp:19]
+
+ <State 26> : 2.27ns
+ST_26 : Operation 183 [1/1] (0.00ns)   --->   "%i_i1 = phi i8 [ %i_2, %5 ], [ 0, %.preheader13.preheader ]"
+ST_26 : Operation 184 [1/1] (0.86ns)   --->   "%exitcond_i2 = icmp eq i8 %i_i1, -60" [SOC_convolution_c++/fifo.cpp:6->SOC_convolution_c++/operation.cpp:28]   --->   Core 25 'Cmp' <Latency = 0> <II = 1> <Delay = 0.67> <FuncUnit> <Opcode : 'icmp'> <InPorts = 2> <OutPorts = 1>
+ST_26 : Operation 185 [1/1] (0.00ns)   --->   "%empty_6 = call i32 (...)* @_ssdm_op_SpecLoopTripCount(i64 196, i64 196, i64 196) nounwind"
+ST_26 : Operation 186 [1/1] (1.35ns)   --->   "%i_2 = add i8 %i_i1, 1" [SOC_convolution_c++/fifo.cpp:6->SOC_convolution_c++/operation.cpp:28]   --->   Core 14 'AddSub' <Latency = 0> <II = 1> <Delay = 1.27> <FuncUnit> <Opcode : 'add' 'sub'> <InPorts = 2> <OutPorts = 1>
+ST_26 : Operation 187 [1/1] (0.00ns)   --->   "br i1 %exitcond_i2, label %buff.exit.preheader, label %5" [SOC_convolution_c++/fifo.cpp:6->SOC_convolution_c++/operation.cpp:28]
+ST_26 : Operation 188 [1/1] (0.00ns)   --->   "%tmp_i3 = zext i8 %i_i1 to i64" [SOC_convolution_c++/fifo.cpp:8->SOC_convolution_c++/operation.cpp:28]
+ST_26 : Operation 189 [1/1] (0.00ns)   --->   "%fifo_in_temp_addr_1 = getelementptr [196 x double]* %fifo_in_temp, i64 0, i64 %tmp_i3" [SOC_convolution_c++/fifo.cpp:8->SOC_convolution_c++/operation.cpp:28]
+ST_26 : Operation 190 [2/2] (2.26ns)   --->   "%fifo_in_temp_load = load double* %fifo_in_temp_addr_1, align 8" [SOC_convolution_c++/fifo.cpp:8->SOC_convolution_c++/operation.cpp:28]   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 2.26> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 64> <Depth = 49> <RAM>
+ST_26 : Operation 191 [1/1] (0.85ns)   --->   "br label %buff.exit" [SOC_convolution_c++/operation.cpp:30]
+
+ <State 27> : 4.53ns
+ST_27 : Operation 192 [1/2] (2.26ns)   --->   "%fifo_in_temp_load = load double* %fifo_in_temp_addr_1, align 8" [SOC_convolution_c++/fifo.cpp:8->SOC_convolution_c++/operation.cpp:28]   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 2.26> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 64> <Depth = 49> <RAM>
+ST_27 : Operation 193 [1/1] (0.00ns)   --->   "%fifo_out_addr_1 = getelementptr inbounds [196 x double]* @fifo_out, i64 0, i64 %tmp_i3" [SOC_convolution_c++/fifo.cpp:8->SOC_convolution_c++/operation.cpp:28]
+ST_27 : Operation 194 [1/1] (2.26ns)   --->   "store double %fifo_in_temp_load, double* %fifo_out_addr_1, align 8" [SOC_convolution_c++/fifo.cpp:8->SOC_convolution_c++/operation.cpp:28]   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 2.26> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 64> <Depth = 49> <RAM>
+ST_27 : Operation 195 [1/1] (0.00ns)   --->   "br label %.preheader13" [SOC_convolution_c++/fifo.cpp:6->SOC_convolution_c++/operation.cpp:28]
+
+ <State 28> : 1.36ns
+ST_28 : Operation 196 [1/1] (0.00ns)   --->   "%i1 = phi i4 [ %i_4, %buff.exit.loopexit ], [ 0, %buff.exit.preheader ]"
+ST_28 : Operation 197 [1/1] (0.00ns)   --->   "%counter_buffer2 = phi i8 [ %counter_buffer2_2, %buff.exit.loopexit ], [ 0, %buff.exit.preheader ]"
+ST_28 : Operation 198 [1/1] (0.87ns)   --->   "%exitcond3 = icmp eq i4 %i1, -2" [SOC_convolution_c++/operation.cpp:30]   --->   Core 25 'Cmp' <Latency = 0> <II = 1> <Delay = 0.67> <FuncUnit> <Opcode : 'icmp'> <InPorts = 2> <OutPorts = 1>
+ST_28 : Operation 199 [1/1] (0.00ns)   --->   "%empty_7 = call i32 (...)* @_ssdm_op_SpecLoopTripCount(i64 14, i64 14, i64 14) nounwind"
+ST_28 : Operation 200 [1/1] (1.01ns)   --->   "%i_4 = add i4 %i1, 1" [SOC_convolution_c++/operation.cpp:30]   --->   Core 14 'AddSub' <Latency = 0> <II = 1> <Delay = 1.27> <FuncUnit> <Opcode : 'add' 'sub'> <InPorts = 2> <OutPorts = 1>
+ST_28 : Operation 201 [1/1] (0.00ns)   --->   "br i1 %exitcond3, label %.preheader12.preheader, label %6" [SOC_convolution_c++/operation.cpp:30]
+ST_28 : Operation 202 [1/1] (1.35ns)   --->   "%counter_buffer2_2 = add i8 %counter_buffer2, 14" [SOC_convolution_c++/operation.cpp:33]   --->   Core 14 'AddSub' <Latency = 0> <II = 1> <Delay = 1.27> <FuncUnit> <Opcode : 'add' 'sub'> <InPorts = 2> <OutPorts = 1>
+ST_28 : Operation 203 [1/1] (0.00ns)   --->   "%tmp_20 = call i8 @_ssdm_op_BitConcatenate.i8.i4.i4(i4 %i1, i4 0)" [SOC_convolution_c++/operation.cpp:30]
+ST_28 : Operation 204 [1/1] (0.00ns)   --->   "%p_shl8_cast = zext i8 %tmp_20 to i9" [SOC_convolution_c++/operation.cpp:30]
+ST_28 : Operation 205 [1/1] (0.00ns)   --->   "%tmp_21 = call i5 @_ssdm_op_BitConcatenate.i5.i4.i1(i4 %i1, i1 false)" [SOC_convolution_c++/operation.cpp:30]
+ST_28 : Operation 206 [1/1] (0.00ns)   --->   "%p_shl9_cast = zext i5 %tmp_21 to i9" [SOC_convolution_c++/operation.cpp:33]
+ST_28 : Operation 207 [1/1] (1.35ns)   --->   "%tmp_22 = sub i9 %p_shl8_cast, %p_shl9_cast" [SOC_convolution_c++/operation.cpp:33]   --->   Core 14 'AddSub' <Latency = 0> <II = 1> <Delay = 1.27> <FuncUnit> <Opcode : 'add' 'sub'> <InPorts = 2> <OutPorts = 1>
+ST_28 : Operation 208 [1/1] (0.85ns)   --->   "br label %7" [SOC_convolution_c++/operation.cpp:31]
+ST_28 : Operation 209 [1/1] (0.85ns)   --->   "br label %.preheader12" [SOC_convolution_c++/conv_14.cpp:8->SOC_convolution_c++/operation.cpp:41]
+
+ <State 29> : 2.27ns
+ST_29 : Operation 210 [1/1] (0.00ns)   --->   "%j2 = phi i4 [ 0, %6 ], [ %j_3, %8 ]"
+ST_29 : Operation 211 [1/1] (0.00ns)   --->   "%counter_buffer2_1 = phi i8 [ %counter_buffer2, %6 ], [ %tmp_4, %8 ]" [SOC_convolution_c++/operation.cpp:33]
+ST_29 : Operation 212 [1/1] (0.87ns)   --->   "%exitcond2 = icmp eq i4 %j2, -2" [SOC_convolution_c++/operation.cpp:31]   --->   Core 25 'Cmp' <Latency = 0> <II = 1> <Delay = 0.67> <FuncUnit> <Opcode : 'icmp'> <InPorts = 2> <OutPorts = 1>
+ST_29 : Operation 213 [1/1] (0.00ns)   --->   "%empty_8 = call i32 (...)* @_ssdm_op_SpecLoopTripCount(i64 14, i64 14, i64 14) nounwind"
+ST_29 : Operation 214 [1/1] (1.01ns)   --->   "%j_3 = add i4 %j2, 1" [SOC_convolution_c++/operation.cpp:31]   --->   Core 14 'AddSub' <Latency = 0> <II = 1> <Delay = 1.27> <FuncUnit> <Opcode : 'add' 'sub'> <InPorts = 2> <OutPorts = 1>
+ST_29 : Operation 215 [1/1] (0.00ns)   --->   "br i1 %exitcond2, label %buff.exit.loopexit, label %8" [SOC_convolution_c++/operation.cpp:31]
+ST_29 : Operation 216 [1/1] (1.35ns)   --->   "%tmp_4 = add i8 %counter_buffer2_1, 1" [SOC_convolution_c++/operation.cpp:33]   --->   Core 14 'AddSub' <Latency = 0> <II = 1> <Delay = 1.27> <FuncUnit> <Opcode : 'add' 'sub'> <InPorts = 2> <OutPorts = 1>
+ST_29 : Operation 217 [1/1] (0.00ns)   --->   "%tmp_5 = zext i8 %counter_buffer2_1 to i64" [SOC_convolution_c++/operation.cpp:33]
+ST_29 : Operation 218 [1/1] (0.00ns)   --->   "%fifo_out_addr = getelementptr inbounds [196 x double]* @fifo_out, i64 0, i64 %tmp_5" [SOC_convolution_c++/operation.cpp:33]
+ST_29 : Operation 219 [2/2] (2.26ns)   --->   "%fifo_out_load = load double* %fifo_out_addr, align 8" [SOC_convolution_c++/operation.cpp:33]   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 2.26> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 64> <Depth = 49> <RAM>
+ST_29 : Operation 220 [1/1] (0.00ns)   --->   "%tmp_6_cast = zext i4 %j2 to i9" [SOC_convolution_c++/operation.cpp:33]
+ST_29 : Operation 221 [1/1] (1.35ns)   --->   "%tmp_31 = add i9 %tmp_22, %tmp_6_cast" [SOC_convolution_c++/operation.cpp:33]   --->   Core 14 'AddSub' <Latency = 0> <II = 1> <Delay = 1.27> <FuncUnit> <Opcode : 'add' 'sub'> <InPorts = 2> <OutPorts = 1>
+ST_29 : Operation 222 [1/1] (0.00ns)   --->   "br label %buff.exit"
+
+ <State 30> : 4.53ns
+ST_30 : Operation 223 [1/2] (2.26ns)   --->   "%fifo_out_load = load double* %fifo_out_addr, align 8" [SOC_convolution_c++/operation.cpp:33]   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 2.26> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 64> <Depth = 49> <RAM>
+ST_30 : Operation 224 [1/1] (0.00ns)   --->   "%tmp_37_cast = sext i9 %tmp_31 to i64" [SOC_convolution_c++/operation.cpp:33]
+ST_30 : Operation 225 [1/1] (0.00ns)   --->   "%in_conv2_addr = getelementptr [196 x double]* %in_conv2, i64 0, i64 %tmp_37_cast" [SOC_convolution_c++/operation.cpp:33]
+ST_30 : Operation 226 [1/1] (2.26ns)   --->   "store double %fifo_out_load, double* %in_conv2_addr, align 8" [SOC_convolution_c++/operation.cpp:33]   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 2.26> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 64> <Depth = 49> <RAM>
+ST_30 : Operation 227 [1/1] (0.00ns)   --->   "br label %7" [SOC_convolution_c++/operation.cpp:31]
+
+ <State 31> : 1.36ns
+ST_31 : Operation 228 [1/1] (0.00ns)   --->   "%i_i4 = phi i3 [ %i_6, %.preheader12.loopexit ], [ 0, %.preheader12.preheader ]"
+ST_31 : Operation 229 [1/1] (0.67ns)   --->   "%exitcond1_i5 = icmp eq i3 %i_i4, -1" [SOC_convolution_c++/conv_14.cpp:8->SOC_convolution_c++/operation.cpp:41]   --->   Core 25 'Cmp' <Latency = 0> <II = 1> <Delay = 0.67> <FuncUnit> <Opcode : 'icmp'> <InPorts = 2> <OutPorts = 1>
+ST_31 : Operation 230 [1/1] (0.00ns)   --->   "%empty_9 = call i32 (...)* @_ssdm_op_SpecLoopTripCount(i64 7, i64 7, i64 7) nounwind"
+ST_31 : Operation 231 [1/1] (0.93ns)   --->   "%i_6 = add i3 %i_i4, 1" [SOC_convolution_c++/conv_14.cpp:8->SOC_convolution_c++/operation.cpp:41]   --->   Core 14 'AddSub' <Latency = 0> <II = 1> <Delay = 1.27> <FuncUnit> <Opcode : 'add' 'sub'> <InPorts = 2> <OutPorts = 1>
+ST_31 : Operation 232 [1/1] (0.00ns)   --->   "br i1 %exitcond1_i5, label %conv2.exit.preheader, label %.preheader.preheader.i7" [SOC_convolution_c++/conv_14.cpp:8->SOC_convolution_c++/operation.cpp:41]
+ST_31 : Operation 233 [1/1] (0.00ns)   --->   "%tmp_i6 = call i4 @_ssdm_op_BitConcatenate.i4.i3.i1(i3 %i_i4, i1 false)" [SOC_convolution_c++/conv_14.cpp:10->SOC_convolution_c++/operation.cpp:41]
+ST_31 : Operation 234 [1/1] (0.00ns)   --->   "%tmp_23 = call i8 @_ssdm_op_BitConcatenate.i8.i3.i5(i3 %i_i4, i5 0)" [SOC_convolution_c++/conv_14.cpp:8->SOC_convolution_c++/operation.cpp:41]
+ST_31 : Operation 235 [1/1] (0.00ns)   --->   "%p_shl13_cast = zext i8 %tmp_23 to i9" [SOC_convolution_c++/conv_14.cpp:8->SOC_convolution_c++/operation.cpp:41]
+ST_31 : Operation 236 [1/1] (0.00ns)   --->   "%tmp_24 = call i5 @_ssdm_op_BitConcatenate.i5.i3.i2(i3 %i_i4, i2 0)" [SOC_convolution_c++/conv_14.cpp:8->SOC_convolution_c++/operation.cpp:41]
+ST_31 : Operation 237 [1/1] (0.00ns)   --->   "%p_shl14_cast = zext i5 %tmp_24 to i9" [SOC_convolution_c++/conv_14.cpp:10->SOC_convolution_c++/operation.cpp:41]
+ST_31 : Operation 238 [1/1] (1.35ns)   --->   "%tmp_25 = sub i9 %p_shl13_cast, %p_shl14_cast" [SOC_convolution_c++/conv_14.cpp:10->SOC_convolution_c++/operation.cpp:41]   --->   Core 14 'AddSub' <Latency = 0> <II = 1> <Delay = 1.27> <FuncUnit> <Opcode : 'add' 'sub'> <InPorts = 2> <OutPorts = 1>
+ST_31 : Operation 239 [1/1] (0.00ns)   --->   "%tmp_2_i = or i4 %tmp_i6, 1" [SOC_convolution_c++/conv_14.cpp:10->SOC_convolution_c++/operation.cpp:41]
+ST_31 : Operation 240 [1/1] (0.00ns)   --->   "%tmp_26 = call i8 @_ssdm_op_BitConcatenate.i8.i4.i4(i4 %tmp_2_i, i4 0)" [SOC_convolution_c++/conv_14.cpp:10->SOC_convolution_c++/operation.cpp:41]
+ST_31 : Operation 241 [1/1] (0.00ns)   --->   "%p_shl11_cast = zext i8 %tmp_26 to i9" [SOC_convolution_c++/conv_14.cpp:10->SOC_convolution_c++/operation.cpp:41]
+ST_31 : Operation 242 [1/1] (0.00ns)   --->   "%tmp_27 = call i5 @_ssdm_op_BitConcatenate.i5.i4.i1(i4 %tmp_2_i, i1 false)" [SOC_convolution_c++/conv_14.cpp:10->SOC_convolution_c++/operation.cpp:41]
+ST_31 : Operation 243 [1/1] (0.00ns)   --->   "%p_shl12_cast = zext i5 %tmp_27 to i9" [SOC_convolution_c++/conv_14.cpp:10->SOC_convolution_c++/operation.cpp:41]
+ST_31 : Operation 244 [1/1] (1.35ns)   --->   "%tmp_28 = sub i9 %p_shl11_cast, %p_shl12_cast" [SOC_convolution_c++/conv_14.cpp:10->SOC_convolution_c++/operation.cpp:41]   --->   Core 14 'AddSub' <Latency = 0> <II = 1> <Delay = 1.27> <FuncUnit> <Opcode : 'add' 'sub'> <InPorts = 2> <OutPorts = 1>
+ST_31 : Operation 245 [1/1] (0.00ns)   --->   "%tmp_4_i_cast = zext i3 %i_i4 to i7" [SOC_convolution_c++/conv_14.cpp:8->SOC_convolution_c++/operation.cpp:41]
+ST_31 : Operation 246 [1/1] (0.00ns)   --->   "%tmp_29 = call i6 @_ssdm_op_BitConcatenate.i6.i3.i3(i3 %i_i4, i3 0)" [SOC_convolution_c++/conv_14.cpp:8->SOC_convolution_c++/operation.cpp:41]
+ST_31 : Operation 247 [1/1] (0.00ns)   --->   "%p_shl10_cast = zext i6 %tmp_29 to i7" [SOC_convolution_c++/conv_14.cpp:10->SOC_convolution_c++/operation.cpp:41]
+ST_31 : Operation 248 [1/1] (1.18ns)   --->   "%tmp_30 = sub i7 %p_shl10_cast, %tmp_4_i_cast" [SOC_convolution_c++/conv_14.cpp:10->SOC_convolution_c++/operation.cpp:41]   --->   Core 14 'AddSub' <Latency = 0> <II = 1> <Delay = 1.27> <FuncUnit> <Opcode : 'add' 'sub'> <InPorts = 2> <OutPorts = 1>
+ST_31 : Operation 249 [1/1] (0.85ns)   --->   "br label %.preheader.i10" [SOC_convolution_c++/conv_14.cpp:9->SOC_convolution_c++/operation.cpp:41]
+ST_31 : Operation 250 [1/1] (0.85ns)   --->   "br label %conv2.exit" [SOC_convolution_c++/operation.cpp:43]
+
+ <State 32> : 3.62ns
+ST_32 : Operation 251 [1/1] (0.00ns)   --->   "%j_i8 = phi i3 [ %j_4, %9 ], [ 0, %.preheader.preheader.i7 ]"
+ST_32 : Operation 252 [1/1] (0.67ns)   --->   "%exitcond_i9 = icmp eq i3 %j_i8, -1" [SOC_convolution_c++/conv_14.cpp:9->SOC_convolution_c++/operation.cpp:41]   --->   Core 25 'Cmp' <Latency = 0> <II = 1> <Delay = 0.67> <FuncUnit> <Opcode : 'icmp'> <InPorts = 2> <OutPorts = 1>
+ST_32 : Operation 253 [1/1] (0.00ns)   --->   "%empty_10 = call i32 (...)* @_ssdm_op_SpecLoopTripCount(i64 7, i64 7, i64 7) nounwind"
+ST_32 : Operation 254 [1/1] (0.93ns)   --->   "%j_4 = add i3 %j_i8, 1" [SOC_convolution_c++/conv_14.cpp:9->SOC_convolution_c++/operation.cpp:41]   --->   Core 14 'AddSub' <Latency = 0> <II = 1> <Delay = 1.27> <FuncUnit> <Opcode : 'add' 'sub'> <InPorts = 2> <OutPorts = 1>
+ST_32 : Operation 255 [1/1] (0.00ns)   --->   "br i1 %exitcond_i9, label %.preheader12.loopexit, label %9" [SOC_convolution_c++/conv_14.cpp:9->SOC_convolution_c++/operation.cpp:41]
+ST_32 : Operation 256 [1/1] (0.00ns)   --->   "%tmp_6_i = call i4 @_ssdm_op_BitConcatenate.i4.i3.i1(i3 %j_i8, i1 false)" [SOC_convolution_c++/conv_14.cpp:10->SOC_convolution_c++/operation.cpp:41]
+ST_32 : Operation 257 [1/1] (0.00ns)   --->   "%tmp_7_i_cast = zext i4 %tmp_6_i to i9" [SOC_convolution_c++/conv_14.cpp:10->SOC_convolution_c++/operation.cpp:41]
+ST_32 : Operation 258 [1/1] (1.35ns)   --->   "%tmp_34 = add i9 %tmp_7_i_cast, %tmp_25" [SOC_convolution_c++/conv_14.cpp:10->SOC_convolution_c++/operation.cpp:41]   --->   Core 14 'AddSub' <Latency = 0> <II = 1> <Delay = 1.27> <FuncUnit> <Opcode : 'add' 'sub'> <InPorts = 2> <OutPorts = 1>
+ST_32 : Operation 259 [1/1] (0.00ns)   --->   "%tmp_40_cast = sext i9 %tmp_34 to i64" [SOC_convolution_c++/conv_14.cpp:10->SOC_convolution_c++/operation.cpp:41]
+ST_32 : Operation 260 [1/1] (0.00ns)   --->   "%in_conv2_addr_1 = getelementptr [196 x double]* %in_conv2, i64 0, i64 %tmp_40_cast" [SOC_convolution_c++/conv_14.cpp:10->SOC_convolution_c++/operation.cpp:41]
+ST_32 : Operation 261 [1/1] (1.35ns)   --->   "%tmp_35 = add i9 %tmp_7_i_cast, %tmp_28" [SOC_convolution_c++/conv_14.cpp:10->SOC_convolution_c++/operation.cpp:41]   --->   Core 14 'AddSub' <Latency = 0> <II = 1> <Delay = 1.27> <FuncUnit> <Opcode : 'add' 'sub'> <InPorts = 2> <OutPorts = 1>
+ST_32 : Operation 262 [2/2] (2.26ns)   --->   "%in_conv2_load = load double* %in_conv2_addr_1, align 16" [SOC_convolution_c++/conv_14.cpp:10->SOC_convolution_c++/operation.cpp:41]   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 2.26> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 64> <Depth = 49> <RAM>
+ST_32 : Operation 263 [1/1] (0.00ns)   --->   "%tmp_9_i = or i4 %tmp_6_i, 1" [SOC_convolution_c++/conv_14.cpp:10->SOC_convolution_c++/operation.cpp:41]
+ST_32 : Operation 264 [1/1] (0.00ns)   --->   "%tmp_i1_cast = zext i4 %tmp_9_i to i9" [SOC_convolution_c++/conv_14.cpp:10->SOC_convolution_c++/operation.cpp:41]
+ST_32 : Operation 265 [1/1] (1.35ns)   --->   "%tmp_36 = add i9 %tmp_i1_cast, %tmp_25" [SOC_convolution_c++/conv_14.cpp:10->SOC_convolution_c++/operation.cpp:41]   --->   Core 14 'AddSub' <Latency = 0> <II = 1> <Delay = 1.27> <FuncUnit> <Opcode : 'add' 'sub'> <InPorts = 2> <OutPorts = 1>
+ST_32 : Operation 266 [1/1] (0.00ns)   --->   "%tmp_42_cast = sext i9 %tmp_36 to i64" [SOC_convolution_c++/conv_14.cpp:10->SOC_convolution_c++/operation.cpp:41]
+ST_32 : Operation 267 [1/1] (0.00ns)   --->   "%in_conv2_addr_2 = getelementptr [196 x double]* %in_conv2, i64 0, i64 %tmp_42_cast" [SOC_convolution_c++/conv_14.cpp:10->SOC_convolution_c++/operation.cpp:41]
+ST_32 : Operation 268 [1/1] (1.35ns)   --->   "%tmp_37 = add i9 %tmp_i1_cast, %tmp_28" [SOC_convolution_c++/conv_14.cpp:10->SOC_convolution_c++/operation.cpp:41]   --->   Core 14 'AddSub' <Latency = 0> <II = 1> <Delay = 1.27> <FuncUnit> <Opcode : 'add' 'sub'> <InPorts = 2> <OutPorts = 1>
+ST_32 : Operation 269 [2/2] (2.26ns)   --->   "%in_conv2_load_1 = load double* %in_conv2_addr_2, align 8" [SOC_convolution_c++/conv_14.cpp:10->SOC_convolution_c++/operation.cpp:41]   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 2.26> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 64> <Depth = 49> <RAM>
+ST_32 : Operation 270 [1/1] (0.00ns)   --->   "%tmp_15_i_cast = zext i3 %j_i8 to i7" [SOC_convolution_c++/conv_14.cpp:10->SOC_convolution_c++/operation.cpp:41]
+ST_32 : Operation 271 [1/1] (1.27ns)   --->   "%tmp_38 = add i7 %tmp_15_i_cast, %tmp_30" [SOC_convolution_c++/conv_14.cpp:10->SOC_convolution_c++/operation.cpp:41]   --->   Core 14 'AddSub' <Latency = 0> <II = 1> <Delay = 1.27> <FuncUnit> <Opcode : 'add' 'sub'> <InPorts = 2> <OutPorts = 1>
+ST_32 : Operation 272 [1/1] (0.00ns)   --->   "br label %.preheader12"
+
+ <State 33> : 2.27ns
+ST_33 : Operation 273 [1/2] (2.26ns)   --->   "%in_conv2_load = load double* %in_conv2_addr_1, align 16" [SOC_convolution_c++/conv_14.cpp:10->SOC_convolution_c++/operation.cpp:41]   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 2.26> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 64> <Depth = 49> <RAM>
+ST_33 : Operation 274 [1/2] (2.26ns)   --->   "%in_conv2_load_1 = load double* %in_conv2_addr_2, align 8" [SOC_convolution_c++/conv_14.cpp:10->SOC_convolution_c++/operation.cpp:41]   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 2.26> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 64> <Depth = 49> <RAM>
+
+ <State 34> : 7.15ns
+ST_34 : Operation 275 [5/5] (7.14ns)   --->   "%tmp_8_i = fmul double %in_conv2_load, 4.559669e-02" [SOC_convolution_c++/conv_14.cpp:10->SOC_convolution_c++/operation.cpp:41]   --->   Core 110 'DMul' <Latency = 4> <II = 1> <Delay = 7.14> <FuncUnit> <Opcode : 'dmul'> <InPorts = 2> <OutPorts = 1>
+ST_34 : Operation 276 [5/5] (7.14ns)   --->   "%tmp_5_i = fmul double %in_conv2_load_1, 0xBFD78CDF6179ED82" [SOC_convolution_c++/conv_14.cpp:10->SOC_convolution_c++/operation.cpp:41]   --->   Core 110 'DMul' <Latency = 4> <II = 1> <Delay = 7.14> <FuncUnit> <Opcode : 'dmul'> <InPorts = 2> <OutPorts = 1>
+
+ <State 35> : 7.15ns
+ST_35 : Operation 277 [4/5] (7.14ns)   --->   "%tmp_8_i = fmul double %in_conv2_load, 4.559669e-02" [SOC_convolution_c++/conv_14.cpp:10->SOC_convolution_c++/operation.cpp:41]   --->   Core 110 'DMul' <Latency = 4> <II = 1> <Delay = 7.14> <FuncUnit> <Opcode : 'dmul'> <InPorts = 2> <OutPorts = 1>
+ST_35 : Operation 278 [4/5] (7.14ns)   --->   "%tmp_5_i = fmul double %in_conv2_load_1, 0xBFD78CDF6179ED82" [SOC_convolution_c++/conv_14.cpp:10->SOC_convolution_c++/operation.cpp:41]   --->   Core 110 'DMul' <Latency = 4> <II = 1> <Delay = 7.14> <FuncUnit> <Opcode : 'dmul'> <InPorts = 2> <OutPorts = 1>
+
+ <State 36> : 7.15ns
+ST_36 : Operation 279 [1/1] (0.00ns)   --->   "%tmp_41_cast = sext i9 %tmp_35 to i64" [SOC_convolution_c++/conv_14.cpp:10->SOC_convolution_c++/operation.cpp:41]
+ST_36 : Operation 280 [1/1] (0.00ns)   --->   "%in_conv2_addr_3 = getelementptr [196 x double]* %in_conv2, i64 0, i64 %tmp_41_cast" [SOC_convolution_c++/conv_14.cpp:10->SOC_convolution_c++/operation.cpp:41]
+ST_36 : Operation 281 [3/5] (7.14ns)   --->   "%tmp_8_i = fmul double %in_conv2_load, 4.559669e-02" [SOC_convolution_c++/conv_14.cpp:10->SOC_convolution_c++/operation.cpp:41]   --->   Core 110 'DMul' <Latency = 4> <II = 1> <Delay = 7.14> <FuncUnit> <Opcode : 'dmul'> <InPorts = 2> <OutPorts = 1>
+ST_36 : Operation 282 [3/5] (7.14ns)   --->   "%tmp_5_i = fmul double %in_conv2_load_1, 0xBFD78CDF6179ED82" [SOC_convolution_c++/conv_14.cpp:10->SOC_convolution_c++/operation.cpp:41]   --->   Core 110 'DMul' <Latency = 4> <II = 1> <Delay = 7.14> <FuncUnit> <Opcode : 'dmul'> <InPorts = 2> <OutPorts = 1>
+ST_36 : Operation 283 [2/2] (2.26ns)   --->   "%in_conv2_load_2 = load double* %in_conv2_addr_3, align 16" [SOC_convolution_c++/conv_14.cpp:10->SOC_convolution_c++/operation.cpp:41]   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 2.26> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 64> <Depth = 49> <RAM>
+
+ <State 37> : 7.15ns
+ST_37 : Operation 284 [2/5] (7.14ns)   --->   "%tmp_8_i = fmul double %in_conv2_load, 4.559669e-02" [SOC_convolution_c++/conv_14.cpp:10->SOC_convolution_c++/operation.cpp:41]   --->   Core 110 'DMul' <Latency = 4> <II = 1> <Delay = 7.14> <FuncUnit> <Opcode : 'dmul'> <InPorts = 2> <OutPorts = 1>
+ST_37 : Operation 285 [2/5] (7.14ns)   --->   "%tmp_5_i = fmul double %in_conv2_load_1, 0xBFD78CDF6179ED82" [SOC_convolution_c++/conv_14.cpp:10->SOC_convolution_c++/operation.cpp:41]   --->   Core 110 'DMul' <Latency = 4> <II = 1> <Delay = 7.14> <FuncUnit> <Opcode : 'dmul'> <InPorts = 2> <OutPorts = 1>
+ST_37 : Operation 286 [1/2] (2.26ns)   --->   "%in_conv2_load_2 = load double* %in_conv2_addr_3, align 16" [SOC_convolution_c++/conv_14.cpp:10->SOC_convolution_c++/operation.cpp:41]   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 2.26> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 64> <Depth = 49> <RAM>
+
+ <State 38> : 7.15ns
+ST_38 : Operation 287 [1/5] (7.14ns)   --->   "%tmp_8_i = fmul double %in_conv2_load, 4.559669e-02" [SOC_convolution_c++/conv_14.cpp:10->SOC_convolution_c++/operation.cpp:41]   --->   Core 110 'DMul' <Latency = 4> <II = 1> <Delay = 7.14> <FuncUnit> <Opcode : 'dmul'> <InPorts = 2> <OutPorts = 1>
+ST_38 : Operation 288 [1/5] (7.14ns)   --->   "%tmp_5_i = fmul double %in_conv2_load_1, 0xBFD78CDF6179ED82" [SOC_convolution_c++/conv_14.cpp:10->SOC_convolution_c++/operation.cpp:41]   --->   Core 110 'DMul' <Latency = 4> <II = 1> <Delay = 7.14> <FuncUnit> <Opcode : 'dmul'> <InPorts = 2> <OutPorts = 1>
+ST_38 : Operation 289 [5/5] (7.14ns)   --->   "%tmp_11_i = fmul double %in_conv2_load_2, -8.351272e-02" [SOC_convolution_c++/conv_14.cpp:10->SOC_convolution_c++/operation.cpp:41]   --->   Core 110 'DMul' <Latency = 4> <II = 1> <Delay = 7.14> <FuncUnit> <Opcode : 'dmul'> <InPorts = 2> <OutPorts = 1>
+
+ <State 39> : 8.42ns
+ST_39 : Operation 290 [4/4] (8.42ns)   --->   "%tmp_10_i = fadd double %tmp_8_i, %tmp_5_i" [SOC_convolution_c++/conv_14.cpp:10->SOC_convolution_c++/operation.cpp:41]   --->   Core 109 'DAddSub' <Latency = 3> <II = 1> <Delay = 8.42> <FuncUnit> <Opcode : 'dadd' 'dsub'> <InPorts = 2> <OutPorts = 1>
+ST_39 : Operation 291 [4/5] (7.14ns)   --->   "%tmp_11_i = fmul double %in_conv2_load_2, -8.351272e-02" [SOC_convolution_c++/conv_14.cpp:10->SOC_convolution_c++/operation.cpp:41]   --->   Core 110 'DMul' <Latency = 4> <II = 1> <Delay = 7.14> <FuncUnit> <Opcode : 'dmul'> <InPorts = 2> <OutPorts = 1>
+
+ <State 40> : 8.42ns
+ST_40 : Operation 292 [1/1] (0.00ns)   --->   "%tmp_43_cast = sext i9 %tmp_37 to i64" [SOC_convolution_c++/conv_14.cpp:10->SOC_convolution_c++/operation.cpp:41]
+ST_40 : Operation 293 [1/1] (0.00ns)   --->   "%in_conv2_addr_4 = getelementptr [196 x double]* %in_conv2, i64 0, i64 %tmp_43_cast" [SOC_convolution_c++/conv_14.cpp:10->SOC_convolution_c++/operation.cpp:41]
+ST_40 : Operation 294 [3/4] (8.42ns)   --->   "%tmp_10_i = fadd double %tmp_8_i, %tmp_5_i" [SOC_convolution_c++/conv_14.cpp:10->SOC_convolution_c++/operation.cpp:41]   --->   Core 109 'DAddSub' <Latency = 3> <II = 1> <Delay = 8.42> <FuncUnit> <Opcode : 'dadd' 'dsub'> <InPorts = 2> <OutPorts = 1>
+ST_40 : Operation 295 [3/5] (7.14ns)   --->   "%tmp_11_i = fmul double %in_conv2_load_2, -8.351272e-02" [SOC_convolution_c++/conv_14.cpp:10->SOC_convolution_c++/operation.cpp:41]   --->   Core 110 'DMul' <Latency = 4> <II = 1> <Delay = 7.14> <FuncUnit> <Opcode : 'dmul'> <InPorts = 2> <OutPorts = 1>
+ST_40 : Operation 296 [2/2] (2.26ns)   --->   "%in_conv2_load_3 = load double* %in_conv2_addr_4, align 8" [SOC_convolution_c++/conv_14.cpp:10->SOC_convolution_c++/operation.cpp:41]   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 2.26> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 64> <Depth = 49> <RAM>
+
+ <State 41> : 8.42ns
+ST_41 : Operation 297 [2/4] (8.42ns)   --->   "%tmp_10_i = fadd double %tmp_8_i, %tmp_5_i" [SOC_convolution_c++/conv_14.cpp:10->SOC_convolution_c++/operation.cpp:41]   --->   Core 109 'DAddSub' <Latency = 3> <II = 1> <Delay = 8.42> <FuncUnit> <Opcode : 'dadd' 'dsub'> <InPorts = 2> <OutPorts = 1>
+ST_41 : Operation 298 [2/5] (7.14ns)   --->   "%tmp_11_i = fmul double %in_conv2_load_2, -8.351272e-02" [SOC_convolution_c++/conv_14.cpp:10->SOC_convolution_c++/operation.cpp:41]   --->   Core 110 'DMul' <Latency = 4> <II = 1> <Delay = 7.14> <FuncUnit> <Opcode : 'dmul'> <InPorts = 2> <OutPorts = 1>
+ST_41 : Operation 299 [1/2] (2.26ns)   --->   "%in_conv2_load_3 = load double* %in_conv2_addr_4, align 8" [SOC_convolution_c++/conv_14.cpp:10->SOC_convolution_c++/operation.cpp:41]   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 2.26> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 64> <Depth = 49> <RAM>
+
+ <State 42> : 8.42ns
+ST_42 : Operation 300 [1/4] (8.42ns)   --->   "%tmp_10_i = fadd double %tmp_8_i, %tmp_5_i" [SOC_convolution_c++/conv_14.cpp:10->SOC_convolution_c++/operation.cpp:41]   --->   Core 109 'DAddSub' <Latency = 3> <II = 1> <Delay = 8.42> <FuncUnit> <Opcode : 'dadd' 'dsub'> <InPorts = 2> <OutPorts = 1>
+ST_42 : Operation 301 [1/5] (7.14ns)   --->   "%tmp_11_i = fmul double %in_conv2_load_2, -8.351272e-02" [SOC_convolution_c++/conv_14.cpp:10->SOC_convolution_c++/operation.cpp:41]   --->   Core 110 'DMul' <Latency = 4> <II = 1> <Delay = 7.14> <FuncUnit> <Opcode : 'dmul'> <InPorts = 2> <OutPorts = 1>
+ST_42 : Operation 302 [5/5] (7.14ns)   --->   "%tmp_13_i = fmul double %in_conv2_load_3, 0xBFD74D55BE787633" [SOC_convolution_c++/conv_14.cpp:10->SOC_convolution_c++/operation.cpp:41]   --->   Core 110 'DMul' <Latency = 4> <II = 1> <Delay = 7.14> <FuncUnit> <Opcode : 'dmul'> <InPorts = 2> <OutPorts = 1>
+
+ <State 43> : 8.42ns
+ST_43 : Operation 303 [4/4] (8.42ns)   --->   "%tmp_12_i = fadd double %tmp_10_i, %tmp_11_i" [SOC_convolution_c++/conv_14.cpp:10->SOC_convolution_c++/operation.cpp:41]   --->   Core 109 'DAddSub' <Latency = 3> <II = 1> <Delay = 8.42> <FuncUnit> <Opcode : 'dadd' 'dsub'> <InPorts = 2> <OutPorts = 1>
+ST_43 : Operation 304 [4/5] (7.14ns)   --->   "%tmp_13_i = fmul double %in_conv2_load_3, 0xBFD74D55BE787633" [SOC_convolution_c++/conv_14.cpp:10->SOC_convolution_c++/operation.cpp:41]   --->   Core 110 'DMul' <Latency = 4> <II = 1> <Delay = 7.14> <FuncUnit> <Opcode : 'dmul'> <InPorts = 2> <OutPorts = 1>
+
+ <State 44> : 8.42ns
+ST_44 : Operation 305 [3/4] (8.42ns)   --->   "%tmp_12_i = fadd double %tmp_10_i, %tmp_11_i" [SOC_convolution_c++/conv_14.cpp:10->SOC_convolution_c++/operation.cpp:41]   --->   Core 109 'DAddSub' <Latency = 3> <II = 1> <Delay = 8.42> <FuncUnit> <Opcode : 'dadd' 'dsub'> <InPorts = 2> <OutPorts = 1>
+ST_44 : Operation 306 [3/5] (7.14ns)   --->   "%tmp_13_i = fmul double %in_conv2_load_3, 0xBFD74D55BE787633" [SOC_convolution_c++/conv_14.cpp:10->SOC_convolution_c++/operation.cpp:41]   --->   Core 110 'DMul' <Latency = 4> <II = 1> <Delay = 7.14> <FuncUnit> <Opcode : 'dmul'> <InPorts = 2> <OutPorts = 1>
+
+ <State 45> : 8.42ns
+ST_45 : Operation 307 [2/4] (8.42ns)   --->   "%tmp_12_i = fadd double %tmp_10_i, %tmp_11_i" [SOC_convolution_c++/conv_14.cpp:10->SOC_convolution_c++/operation.cpp:41]   --->   Core 109 'DAddSub' <Latency = 3> <II = 1> <Delay = 8.42> <FuncUnit> <Opcode : 'dadd' 'dsub'> <InPorts = 2> <OutPorts = 1>
+ST_45 : Operation 308 [2/5] (7.14ns)   --->   "%tmp_13_i = fmul double %in_conv2_load_3, 0xBFD74D55BE787633" [SOC_convolution_c++/conv_14.cpp:10->SOC_convolution_c++/operation.cpp:41]   --->   Core 110 'DMul' <Latency = 4> <II = 1> <Delay = 7.14> <FuncUnit> <Opcode : 'dmul'> <InPorts = 2> <OutPorts = 1>
+
+ <State 46> : 8.42ns
+ST_46 : Operation 309 [1/4] (8.42ns)   --->   "%tmp_12_i = fadd double %tmp_10_i, %tmp_11_i" [SOC_convolution_c++/conv_14.cpp:10->SOC_convolution_c++/operation.cpp:41]   --->   Core 109 'DAddSub' <Latency = 3> <II = 1> <Delay = 8.42> <FuncUnit> <Opcode : 'dadd' 'dsub'> <InPorts = 2> <OutPorts = 1>
+ST_46 : Operation 310 [1/5] (7.14ns)   --->   "%tmp_13_i = fmul double %in_conv2_load_3, 0xBFD74D55BE787633" [SOC_convolution_c++/conv_14.cpp:10->SOC_convolution_c++/operation.cpp:41]   --->   Core 110 'DMul' <Latency = 4> <II = 1> <Delay = 7.14> <FuncUnit> <Opcode : 'dmul'> <InPorts = 2> <OutPorts = 1>
+
+ <State 47> : 8.42ns
+ST_47 : Operation 311 [4/4] (8.42ns)   --->   "%tmp_14_i = fadd double %tmp_12_i, %tmp_13_i" [SOC_convolution_c++/conv_14.cpp:10->SOC_convolution_c++/operation.cpp:41]   --->   Core 109 'DAddSub' <Latency = 3> <II = 1> <Delay = 8.42> <FuncUnit> <Opcode : 'dadd' 'dsub'> <InPorts = 2> <OutPorts = 1>
+
+ <State 48> : 8.42ns
+ST_48 : Operation 312 [3/4] (8.42ns)   --->   "%tmp_14_i = fadd double %tmp_12_i, %tmp_13_i" [SOC_convolution_c++/conv_14.cpp:10->SOC_convolution_c++/operation.cpp:41]   --->   Core 109 'DAddSub' <Latency = 3> <II = 1> <Delay = 8.42> <FuncUnit> <Opcode : 'dadd' 'dsub'> <InPorts = 2> <OutPorts = 1>
+
+ <State 49> : 8.42ns
+ST_49 : Operation 313 [2/4] (8.42ns)   --->   "%tmp_14_i = fadd double %tmp_12_i, %tmp_13_i" [SOC_convolution_c++/conv_14.cpp:10->SOC_convolution_c++/operation.cpp:41]   --->   Core 109 'DAddSub' <Latency = 3> <II = 1> <Delay = 8.42> <FuncUnit> <Opcode : 'dadd' 'dsub'> <InPorts = 2> <OutPorts = 1>
+
+ <State 50> : 8.42ns
+ST_50 : Operation 314 [1/4] (8.42ns)   --->   "%tmp_14_i = fadd double %tmp_12_i, %tmp_13_i" [SOC_convolution_c++/conv_14.cpp:10->SOC_convolution_c++/operation.cpp:41]   --->   Core 109 'DAddSub' <Latency = 3> <II = 1> <Delay = 8.42> <FuncUnit> <Opcode : 'dadd' 'dsub'> <InPorts = 2> <OutPorts = 1>
+
+ <State 51> : 2.27ns
+ST_51 : Operation 315 [1/1] (0.00ns)   --->   "%tmp_44_cast = sext i7 %tmp_38 to i64" [SOC_convolution_c++/conv_14.cpp:10->SOC_convolution_c++/operation.cpp:41]
+ST_51 : Operation 316 [1/1] (0.00ns)   --->   "%out_data_2_addr_1 = getelementptr [49 x double]* @out_data_2, i64 0, i64 %tmp_44_cast" [SOC_convolution_c++/conv_14.cpp:10->SOC_convolution_c++/operation.cpp:41]
+ST_51 : Operation 317 [1/1] (2.26ns)   --->   "store double %tmp_14_i, double* %out_data_2_addr_1, align 8" [SOC_convolution_c++/conv_14.cpp:10->SOC_convolution_c++/operation.cpp:41]   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 2.26> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 64> <Depth = 49> <RAM>
+ST_51 : Operation 318 [1/1] (0.00ns)   --->   "br label %.preheader.i10" [SOC_convolution_c++/conv_14.cpp:9->SOC_convolution_c++/operation.cpp:41]
+
+ <State 52> : 1.19ns
+ST_52 : Operation 319 [1/1] (0.00ns)   --->   "%i3 = phi i3 [ %i_5, %conv2.exit.loopexit ], [ 0, %conv2.exit.preheader ]"
+ST_52 : Operation 320 [1/1] (0.67ns)   --->   "%exitcond1 = icmp eq i3 %i3, -1" [SOC_convolution_c++/operation.cpp:43]   --->   Core 25 'Cmp' <Latency = 0> <II = 1> <Delay = 0.67> <FuncUnit> <Opcode : 'icmp'> <InPorts = 2> <OutPorts = 1>
+ST_52 : Operation 321 [1/1] (0.00ns)   --->   "%empty_11 = call i32 (...)* @_ssdm_op_SpecLoopTripCount(i64 7, i64 7, i64 7) nounwind"
+ST_52 : Operation 322 [1/1] (0.93ns)   --->   "%i_5 = add i3 %i3, 1" [SOC_convolution_c++/operation.cpp:43]   --->   Core 14 'AddSub' <Latency = 0> <II = 1> <Delay = 1.27> <FuncUnit> <Opcode : 'add' 'sub'> <InPorts = 2> <OutPorts = 1>
+ST_52 : Operation 323 [1/1] (0.00ns)   --->   "br i1 %exitcond1, label %11, label %.preheader.preheader" [SOC_convolution_c++/operation.cpp:43]
+ST_52 : Operation 324 [1/1] (0.00ns)   --->   "%tmp_7_cast = zext i3 %i3 to i7" [SOC_convolution_c++/operation.cpp:43]
+ST_52 : Operation 325 [1/1] (0.00ns)   --->   "%tmp_32 = call i6 @_ssdm_op_BitConcatenate.i6.i3.i3(i3 %i3, i3 0)" [SOC_convolution_c++/operation.cpp:43]
+ST_52 : Operation 326 [1/1] (0.00ns)   --->   "%p_shl15_cast = zext i6 %tmp_32 to i7" [SOC_convolution_c++/operation.cpp:46]
+ST_52 : Operation 327 [1/1] (1.18ns)   --->   "%tmp_33 = sub i7 %p_shl15_cast, %tmp_7_cast" [SOC_convolution_c++/operation.cpp:46]   --->   Core 14 'AddSub' <Latency = 0> <II = 1> <Delay = 1.27> <FuncUnit> <Opcode : 'add' 'sub'> <InPorts = 2> <OutPorts = 1>
+ST_52 : Operation 328 [1/1] (0.85ns)   --->   "br label %.preheader" [SOC_convolution_c++/operation.cpp:44]
+ST_52 : Operation 329 [1/1] (0.00ns)   --->   "ret void" [SOC_convolution_c++/operation.cpp:51]
+
+ <State 53> : 3.54ns
+ST_53 : Operation 330 [1/1] (0.00ns)   --->   "%j4 = phi i3 [ %j_5, %10 ], [ 0, %.preheader.preheader ]"
+ST_53 : Operation 331 [1/1] (0.67ns)   --->   "%exitcond = icmp eq i3 %j4, -1" [SOC_convolution_c++/operation.cpp:44]   --->   Core 25 'Cmp' <Latency = 0> <II = 1> <Delay = 0.67> <FuncUnit> <Opcode : 'icmp'> <InPorts = 2> <OutPorts = 1>
+ST_53 : Operation 332 [1/1] (0.00ns)   --->   "%empty_12 = call i32 (...)* @_ssdm_op_SpecLoopTripCount(i64 7, i64 7, i64 7) nounwind"
+ST_53 : Operation 333 [1/1] (0.93ns)   --->   "%j_5 = add i3 %j4, 1" [SOC_convolution_c++/operation.cpp:44]   --->   Core 14 'AddSub' <Latency = 0> <II = 1> <Delay = 1.27> <FuncUnit> <Opcode : 'add' 'sub'> <InPorts = 2> <OutPorts = 1>
+ST_53 : Operation 334 [1/1] (0.00ns)   --->   "br i1 %exitcond, label %conv2.exit.loopexit, label %10" [SOC_convolution_c++/operation.cpp:44]
+ST_53 : Operation 335 [1/1] (0.00ns)   --->   "%tmp_8_cast = zext i3 %j4 to i7" [SOC_convolution_c++/operation.cpp:46]
+ST_53 : Operation 336 [1/1] (1.27ns)   --->   "%tmp_39 = add i7 %tmp_33, %tmp_8_cast" [SOC_convolution_c++/operation.cpp:46]   --->   Core 14 'AddSub' <Latency = 0> <II = 1> <Delay = 1.27> <FuncUnit> <Opcode : 'add' 'sub'> <InPorts = 2> <OutPorts = 1>
+ST_53 : Operation 337 [1/1] (0.00ns)   --->   "%tmp_45_cast = sext i7 %tmp_39 to i64" [SOC_convolution_c++/operation.cpp:46]
+ST_53 : Operation 338 [1/1] (0.00ns)   --->   "%out_data_2_addr = getelementptr [49 x double]* @out_data_2, i64 0, i64 %tmp_45_cast" [SOC_convolution_c++/operation.cpp:46]
+ST_53 : Operation 339 [2/2] (2.26ns)   --->   "%out_data_2_load = load double* %out_data_2_addr, align 8" [SOC_convolution_c++/operation.cpp:46]   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 2.26> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 64> <Depth = 49> <RAM>
+ST_53 : Operation 340 [1/1] (0.00ns)   --->   "br label %conv2.exit"
+
+ <State 54> : 4.53ns
+ST_54 : Operation 341 [1/1] (0.00ns)   --->   "%out_data_addr = getelementptr [49 x double]* @out_data, i64 0, i64 %tmp_45_cast" [SOC_convolution_c++/operation.cpp:46]
+ST_54 : Operation 342 [1/2] (2.26ns)   --->   "%out_data_2_load = load double* %out_data_2_addr, align 8" [SOC_convolution_c++/operation.cpp:46]   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 2.26> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 64> <Depth = 49> <RAM>
+ST_54 : Operation 343 [1/1] (2.26ns)   --->   "store double %out_data_2_load, double* %out_data_addr, align 8" [SOC_convolution_c++/operation.cpp:46]   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 2.26> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 64> <Depth = 49> <RAM>
+ST_54 : Operation 344 [1/1] (0.00ns)   --->   "br label %.preheader" [SOC_convolution_c++/operation.cpp:44]
+
+
+============================================================
++ Verbose Summary: Timing violations
+============================================================
+Target clock period: 10ns, clock uncertainty: 1.25ns.
+
+ <State 1>: 0.85ns
+The critical path consists of the following:
+	multiplexor before 'phi' operation ('i') with incoming values : ('i', SOC_convolution_c++/conv_28.cpp:7->SOC_convolution_c++/operation.cpp:16) [12]  (0.85 ns)
+
+ <State 2>: 1.36ns
+The critical path consists of the following:
+	'phi' operation ('i') with incoming values : ('i', SOC_convolution_c++/conv_28.cpp:7->SOC_convolution_c++/operation.cpp:16) [12]  (0 ns)
+	'sub' operation ('tmp_10', SOC_convolution_c++/conv_28.cpp:9->SOC_convolution_c++/operation.cpp:16) [33]  (1.36 ns)
+
+ <State 3>: 3.61ns
+The critical path consists of the following:
+	'phi' operation ('j') with incoming values : ('j', SOC_convolution_c++/conv_28.cpp:8->SOC_convolution_c++/operation.cpp:16) [36]  (0 ns)
+	'add' operation ('tmp_14', SOC_convolution_c++/conv_28.cpp:9->SOC_convolution_c++/operation.cpp:16) [44]  (1.34 ns)
+	'getelementptr' operation ('ip_addr', SOC_convolution_c++/conv_28.cpp:9->SOC_convolution_c++/operation.cpp:16) [46]  (0 ns)
+	'load' operation ('ip_load', SOC_convolution_c++/conv_28.cpp:9->SOC_convolution_c++/operation.cpp:16) on array 'ip' [50]  (2.27 ns)
+
+ <State 4>: 2.27ns
+The critical path consists of the following:
+	'load' operation ('ip_load', SOC_convolution_c++/conv_28.cpp:9->SOC_convolution_c++/operation.cpp:16) on array 'ip' [50]  (2.27 ns)
+
+ <State 5>: 7.15ns
+The critical path consists of the following:
+	'dmul' operation ('tmp_21_i', SOC_convolution_c++/conv_28.cpp:9->SOC_convolution_c++/operation.cpp:16) [51]  (7.15 ns)
+
+ <State 6>: 7.15ns
+The critical path consists of the following:
+	'dmul' operation ('tmp_21_i', SOC_convolution_c++/conv_28.cpp:9->SOC_convolution_c++/operation.cpp:16) [51]  (7.15 ns)
+
+ <State 7>: 7.15ns
+The critical path consists of the following:
+	'dmul' operation ('tmp_21_i', SOC_convolution_c++/conv_28.cpp:9->SOC_convolution_c++/operation.cpp:16) [51]  (7.15 ns)
+
+ <State 8>: 7.15ns
+The critical path consists of the following:
+	'dmul' operation ('tmp_21_i', SOC_convolution_c++/conv_28.cpp:9->SOC_convolution_c++/operation.cpp:16) [51]  (7.15 ns)
+
+ <State 9>: 7.15ns
+The critical path consists of the following:
+	'dmul' operation ('tmp_21_i', SOC_convolution_c++/conv_28.cpp:9->SOC_convolution_c++/operation.cpp:16) [51]  (7.15 ns)
+
+ <State 10>: 8.42ns
+The critical path consists of the following:
+	'dadd' operation ('tmp_25_i', SOC_convolution_c++/conv_28.cpp:9->SOC_convolution_c++/operation.cpp:16) [62]  (8.42 ns)
+
+ <State 11>: 8.42ns
+The critical path consists of the following:
+	'dadd' operation ('tmp_25_i', SOC_convolution_c++/conv_28.cpp:9->SOC_convolution_c++/operation.cpp:16) [62]  (8.42 ns)
+
+ <State 12>: 8.42ns
+The critical path consists of the following:
+	'dadd' operation ('tmp_25_i', SOC_convolution_c++/conv_28.cpp:9->SOC_convolution_c++/operation.cpp:16) [62]  (8.42 ns)
+
+ <State 13>: 8.42ns
+The critical path consists of the following:
+	'dadd' operation ('tmp_25_i', SOC_convolution_c++/conv_28.cpp:9->SOC_convolution_c++/operation.cpp:16) [62]  (8.42 ns)
+
+ <State 14>: 8.42ns
+The critical path consists of the following:
+	'dadd' operation ('tmp_27_i', SOC_convolution_c++/conv_28.cpp:9->SOC_convolution_c++/operation.cpp:16) [65]  (8.42 ns)
+
+ <State 15>: 8.42ns
+The critical path consists of the following:
+	'dadd' operation ('tmp_27_i', SOC_convolution_c++/conv_28.cpp:9->SOC_convolution_c++/operation.cpp:16) [65]  (8.42 ns)
+
+ <State 16>: 8.42ns
+The critical path consists of the following:
+	'dadd' operation ('tmp_27_i', SOC_convolution_c++/conv_28.cpp:9->SOC_convolution_c++/operation.cpp:16) [65]  (8.42 ns)
+
+ <State 17>: 8.42ns
+The critical path consists of the following:
+	'dadd' operation ('tmp_27_i', SOC_convolution_c++/conv_28.cpp:9->SOC_convolution_c++/operation.cpp:16) [65]  (8.42 ns)
+
+ <State 18>: 8.42ns
+The critical path consists of the following:
+	'dadd' operation ('tmp_29_i', SOC_convolution_c++/conv_28.cpp:9->SOC_convolution_c++/operation.cpp:16) [68]  (8.42 ns)
+
+ <State 19>: 8.42ns
+The critical path consists of the following:
+	'dadd' operation ('tmp_29_i', SOC_convolution_c++/conv_28.cpp:9->SOC_convolution_c++/operation.cpp:16) [68]  (8.42 ns)
+
+ <State 20>: 8.42ns
+The critical path consists of the following:
+	'dadd' operation ('tmp_29_i', SOC_convolution_c++/conv_28.cpp:9->SOC_convolution_c++/operation.cpp:16) [68]  (8.42 ns)
+
+ <State 21>: 8.42ns
+The critical path consists of the following:
+	'dadd' operation ('tmp_29_i', SOC_convolution_c++/conv_28.cpp:9->SOC_convolution_c++/operation.cpp:16) [68]  (8.42 ns)
+
+ <State 22>: 2.27ns
+The critical path consists of the following:
+	'getelementptr' operation ('out_data_1_addr_1', SOC_convolution_c++/conv_28.cpp:9->SOC_convolution_c++/operation.cpp:16) [72]  (0 ns)
+	'store' operation (SOC_convolution_c++/conv_28.cpp:9->SOC_convolution_c++/operation.cpp:16) of variable 'tmp_29_i', SOC_convolution_c++/conv_28.cpp:9->SOC_convolution_c++/operation.cpp:16 on array 'out_data_1' [73]  (2.27 ns)
+
+ <State 23>: 1.36ns
+The critical path consists of the following:
+	'phi' operation ('i') with incoming values : ('i', SOC_convolution_c++/operation.cpp:18) [80]  (0 ns)
+	'sub' operation ('tmp_13', SOC_convolution_c++/operation.cpp:21) [92]  (1.36 ns)
+
+ <State 24>: 3.62ns
+The critical path consists of the following:
+	'phi' operation ('j') with incoming values : ('j', SOC_convolution_c++/operation.cpp:19) [95]  (0 ns)
+	'add' operation ('tmp_19', SOC_convolution_c++/operation.cpp:21) [103]  (1.35 ns)
+	'getelementptr' operation ('out_data_1_addr', SOC_convolution_c++/operation.cpp:21) [105]  (0 ns)
+	'load' operation ('out_data_1_load', SOC_convolution_c++/operation.cpp:21) on array 'out_data_1' [106]  (2.27 ns)
+
+ <State 25>: 4.53ns
+The critical path consists of the following:
+	'load' operation ('out_data_1_load', SOC_convolution_c++/operation.cpp:21) on array 'out_data_1' [106]  (2.27 ns)
+	'store' operation (SOC_convolution_c++/operation.cpp:21) of variable 'out_data_1_load', SOC_convolution_c++/operation.cpp:21 on array 'fifo_in', SOC_convolution_c++/operation.cpp:10 [110]  (2.27 ns)
+
+ <State 26>: 2.27ns
+The critical path consists of the following:
+	'phi' operation ('i') with incoming values : ('i', SOC_convolution_c++/fifo.cpp:6->SOC_convolution_c++/operation.cpp:28) [117]  (0 ns)
+	'getelementptr' operation ('fifo_in_temp_addr_1', SOC_convolution_c++/fifo.cpp:8->SOC_convolution_c++/operation.cpp:28) [124]  (0 ns)
+	'load' operation ('fifo_in_temp_load', SOC_convolution_c++/fifo.cpp:8->SOC_convolution_c++/operation.cpp:28) on array 'fifo_in', SOC_convolution_c++/operation.cpp:10 [125]  (2.27 ns)
+
+ <State 27>: 4.53ns
+The critical path consists of the following:
+	'load' operation ('fifo_in_temp_load', SOC_convolution_c++/fifo.cpp:8->SOC_convolution_c++/operation.cpp:28) on array 'fifo_in', SOC_convolution_c++/operation.cpp:10 [125]  (2.27 ns)
+	'store' operation (SOC_convolution_c++/fifo.cpp:8->SOC_convolution_c++/operation.cpp:28) of variable 'fifo_in_temp_load', SOC_convolution_c++/fifo.cpp:8->SOC_convolution_c++/operation.cpp:28 on array 'fifo_out' [127]  (2.27 ns)
+
+ <State 28>: 1.36ns
+The critical path consists of the following:
+	'phi' operation ('i') with incoming values : ('i', SOC_convolution_c++/operation.cpp:30) [132]  (0 ns)
+	'sub' operation ('tmp_22', SOC_convolution_c++/operation.cpp:33) [144]  (1.36 ns)
+
+ <State 29>: 2.27ns
+The critical path consists of the following:
+	'phi' operation ('counter_buffer2_1', SOC_convolution_c++/operation.cpp:33) with incoming values : ('counter_buffer2', SOC_convolution_c++/operation.cpp:33) ('tmp_4', SOC_convolution_c++/operation.cpp:33) [148]  (0 ns)
+	'getelementptr' operation ('fifo_out_addr', SOC_convolution_c++/operation.cpp:33) [156]  (0 ns)
+	'load' operation ('fifo_out_load', SOC_convolution_c++/operation.cpp:33) on array 'fifo_out' [157]  (2.27 ns)
+
+ <State 30>: 4.53ns
+The critical path consists of the following:
+	'load' operation ('fifo_out_load', SOC_convolution_c++/operation.cpp:33) on array 'fifo_out' [157]  (2.27 ns)
+	'store' operation (SOC_convolution_c++/operation.cpp:33) of variable 'fifo_out_load', SOC_convolution_c++/operation.cpp:33 on array 'in_data', SOC_convolution_c++/operation.cpp:12 [162]  (2.27 ns)
+
+ <State 31>: 1.36ns
+The critical path consists of the following:
+	'phi' operation ('i') with incoming values : ('i', SOC_convolution_c++/conv_14.cpp:8->SOC_convolution_c++/operation.cpp:41) [169]  (0 ns)
+	'sub' operation ('tmp_25', SOC_convolution_c++/conv_14.cpp:10->SOC_convolution_c++/operation.cpp:41) [180]  (1.36 ns)
+
+ <State 32>: 3.62ns
+The critical path consists of the following:
+	'phi' operation ('j') with incoming values : ('j', SOC_convolution_c++/conv_14.cpp:9->SOC_convolution_c++/operation.cpp:41) [193]  (0 ns)
+	'add' operation ('tmp_34', SOC_convolution_c++/conv_14.cpp:10->SOC_convolution_c++/operation.cpp:41) [201]  (1.35 ns)
+	'getelementptr' operation ('in_conv2_addr_1', SOC_convolution_c++/conv_14.cpp:10->SOC_convolution_c++/operation.cpp:41) [203]  (0 ns)
+	'load' operation ('in_conv2_load', SOC_convolution_c++/conv_14.cpp:10->SOC_convolution_c++/operation.cpp:41) on array 'in_data', SOC_convolution_c++/operation.cpp:12 [207]  (2.27 ns)
+
+ <State 33>: 2.27ns
+The critical path consists of the following:
+	'load' operation ('in_conv2_load', SOC_convolution_c++/conv_14.cpp:10->SOC_convolution_c++/operation.cpp:41) on array 'in_data', SOC_convolution_c++/operation.cpp:12 [207]  (2.27 ns)
+
+ <State 34>: 7.15ns
+The critical path consists of the following:
+	'dmul' operation ('tmp_8_i', SOC_convolution_c++/conv_14.cpp:10->SOC_convolution_c++/operation.cpp:41) [208]  (7.15 ns)
+
+ <State 35>: 7.15ns
+The critical path consists of the following:
+	'dmul' operation ('tmp_8_i', SOC_convolution_c++/conv_14.cpp:10->SOC_convolution_c++/operation.cpp:41) [208]  (7.15 ns)
+
+ <State 36>: 7.15ns
+The critical path consists of the following:
+	'dmul' operation ('tmp_8_i', SOC_convolution_c++/conv_14.cpp:10->SOC_convolution_c++/operation.cpp:41) [208]  (7.15 ns)
+
+ <State 37>: 7.15ns
+The critical path consists of the following:
+	'dmul' operation ('tmp_8_i', SOC_convolution_c++/conv_14.cpp:10->SOC_convolution_c++/operation.cpp:41) [208]  (7.15 ns)
+
+ <State 38>: 7.15ns
+The critical path consists of the following:
+	'dmul' operation ('tmp_8_i', SOC_convolution_c++/conv_14.cpp:10->SOC_convolution_c++/operation.cpp:41) [208]  (7.15 ns)
+
+ <State 39>: 8.42ns
+The critical path consists of the following:
+	'dadd' operation ('tmp_10_i', SOC_convolution_c++/conv_14.cpp:10->SOC_convolution_c++/operation.cpp:41) [219]  (8.42 ns)
+
+ <State 40>: 8.42ns
+The critical path consists of the following:
+	'dadd' operation ('tmp_10_i', SOC_convolution_c++/conv_14.cpp:10->SOC_convolution_c++/operation.cpp:41) [219]  (8.42 ns)
+
+ <State 41>: 8.42ns
+The critical path consists of the following:
+	'dadd' operation ('tmp_10_i', SOC_convolution_c++/conv_14.cpp:10->SOC_convolution_c++/operation.cpp:41) [219]  (8.42 ns)
+
+ <State 42>: 8.42ns
+The critical path consists of the following:
+	'dadd' operation ('tmp_10_i', SOC_convolution_c++/conv_14.cpp:10->SOC_convolution_c++/operation.cpp:41) [219]  (8.42 ns)
+
+ <State 43>: 8.42ns
+The critical path consists of the following:
+	'dadd' operation ('tmp_12_i', SOC_convolution_c++/conv_14.cpp:10->SOC_convolution_c++/operation.cpp:41) [222]  (8.42 ns)
+
+ <State 44>: 8.42ns
+The critical path consists of the following:
+	'dadd' operation ('tmp_12_i', SOC_convolution_c++/conv_14.cpp:10->SOC_convolution_c++/operation.cpp:41) [222]  (8.42 ns)
+
+ <State 45>: 8.42ns
+The critical path consists of the following:
+	'dadd' operation ('tmp_12_i', SOC_convolution_c++/conv_14.cpp:10->SOC_convolution_c++/operation.cpp:41) [222]  (8.42 ns)
+
+ <State 46>: 8.42ns
+The critical path consists of the following:
+	'dadd' operation ('tmp_12_i', SOC_convolution_c++/conv_14.cpp:10->SOC_convolution_c++/operation.cpp:41) [222]  (8.42 ns)
+
+ <State 47>: 8.42ns
+The critical path consists of the following:
+	'dadd' operation ('tmp_14_i', SOC_convolution_c++/conv_14.cpp:10->SOC_convolution_c++/operation.cpp:41) [225]  (8.42 ns)
+
+ <State 48>: 8.42ns
+The critical path consists of the following:
+	'dadd' operation ('tmp_14_i', SOC_convolution_c++/conv_14.cpp:10->SOC_convolution_c++/operation.cpp:41) [225]  (8.42 ns)
+
+ <State 49>: 8.42ns
+The critical path consists of the following:
+	'dadd' operation ('tmp_14_i', SOC_convolution_c++/conv_14.cpp:10->SOC_convolution_c++/operation.cpp:41) [225]  (8.42 ns)
+
+ <State 50>: 8.42ns
+The critical path consists of the following:
+	'dadd' operation ('tmp_14_i', SOC_convolution_c++/conv_14.cpp:10->SOC_convolution_c++/operation.cpp:41) [225]  (8.42 ns)
+
+ <State 51>: 2.27ns
+The critical path consists of the following:
+	'getelementptr' operation ('out_data_2_addr_1', SOC_convolution_c++/conv_14.cpp:10->SOC_convolution_c++/operation.cpp:41) [229]  (0 ns)
+	'store' operation (SOC_convolution_c++/conv_14.cpp:10->SOC_convolution_c++/operation.cpp:41) of variable 'tmp_14_i', SOC_convolution_c++/conv_14.cpp:10->SOC_convolution_c++/operation.cpp:41 on array 'out_data_2' [230]  (2.27 ns)
+
+ <State 52>: 1.19ns
+The critical path consists of the following:
+	'phi' operation ('i') with incoming values : ('i', SOC_convolution_c++/operation.cpp:43) [237]  (0 ns)
+	'sub' operation ('tmp_33', SOC_convolution_c++/operation.cpp:46) [246]  (1.19 ns)
+
+ <State 53>: 3.54ns
+The critical path consists of the following:
+	'phi' operation ('j') with incoming values : ('j', SOC_convolution_c++/operation.cpp:44) [249]  (0 ns)
+	'add' operation ('tmp_39', SOC_convolution_c++/operation.cpp:46) [256]  (1.27 ns)
+	'getelementptr' operation ('out_data_2_addr', SOC_convolution_c++/operation.cpp:46) [258]  (0 ns)
+	'load' operation ('out_data_2_load', SOC_convolution_c++/operation.cpp:46) on array 'out_data_2' [260]  (2.27 ns)
+
+ <State 54>: 4.53ns
+The critical path consists of the following:
+	'load' operation ('out_data_2_load', SOC_convolution_c++/operation.cpp:46) on array 'out_data_2' [260]  (2.27 ns)
+	'store' operation (SOC_convolution_c++/operation.cpp:46) of variable 'out_data_2_load', SOC_convolution_c++/operation.cpp:46 on array 'out_data' [261]  (2.27 ns)
+
+
+============================================================
++ Verbose Summary: Binding
+============================================================
+N/A
+* FSMD analyzer results:
+  - Output states:
+ - Input state : 
+  - Chain level:
+	State 1
+	State 2
+	State 3
+	State 4
+	State 5
+	State 6
+	State 7
+	State 8
+	State 9
+	State 10
+	State 11
+	State 12
+	State 13
+	State 14
+	State 15
+	State 16
+	State 17
+	State 18
+	State 19
+	State 20
+	State 21
+	State 22
+	State 23
+	State 24
+	State 25
+	State 26
+	State 27
+	State 28
+	State 29
+	State 30
+	State 31
+	State 32
+	State 33
+	State 34
+	State 35
+	State 36
+	State 37
+	State 38
+	State 39
+	State 40
+	State 41
+	State 42
+	State 43
+	State 44
+	State 45
+	State 46
+	State 47
+	State 48
+	State 49
+	State 50
+	State 51
+	State 52
+	State 53
+	State 54
+
+
+============================================================
++ Verbose Summary: Datapath Resource usage 
+============================================================
+N/A

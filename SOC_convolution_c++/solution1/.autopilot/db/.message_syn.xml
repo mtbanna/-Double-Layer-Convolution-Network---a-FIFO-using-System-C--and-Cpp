@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Messages>
+	<Message prefix="[HLS 200-10]" severity="INFO" keynum="HLS_10_1312" content="Analyzing design file &apos;SOC_convolution_c++/conv_14.cpp&apos; ..." tag=""/>
+	<Message prefix="[HLS 200-10]" severity="INFO" keynum="HLS_10_1312" content="Analyzing design file &apos;SOC_convolution_c++/conv_28.cpp&apos; ..." tag=""/>
+	<Message prefix="[HLS 200-10]" severity="INFO" keynum="HLS_10_1312" content="Analyzing design file &apos;SOC_convolution_c++/fifo.cpp&apos; ..." tag=""/>
+	<Message prefix="[HLS 200-10]" severity="INFO" keynum="HLS_10_1312" content="Analyzing design file &apos;SOC_convolution_c++/operation.cpp&apos; ..." tag=""/>
+	<Message prefix="[HLS 200-10]" severity="INFO" keynum="HLS_10_1465" content="Validating synthesis directives ..." tag=""/>
+	<Message prefix="[HLS 200-111]" severity="INFO" keynum="473" content="Finished Checking Pragmas Time (s): cpu = 00:00:01 ; elapsed = 00:00:36 . Memory (MB): peak = 99.078 ; gain = 43.977" tag=""/>
+	<Message prefix="[HLS 200-111]" severity="INFO" keynum="473" content="Finished Linking Time (s): cpu = 00:00:01 ; elapsed = 00:00:41 . Memory (MB): peak = 99.145 ; gain = 44.043" tag=""/>
+	<Message prefix="[HLS 200-10]" severity="INFO" keynum="HLS_10_1467" content="Starting code transformations ..." tag=""/>
+	<Message prefix="[HLS 200-111]" severity="INFO" keynum="473" content="Finished Standard Transforms Time (s): cpu = 00:00:01 ; elapsed = 00:00:43 . Memory (MB): peak = 112.867 ; gain = 57.766" tag=""/>
+	<Message prefix="[HLS 200-10]" severity="INFO" keynum="HLS_10_1472" content="Checking synthesizability ..." tag=""/>
+	<Message prefix="[XFORM 203-602]" severity="INFO" keynum="794" content="Inlining function &apos;buff&apos; into &apos;compute&apos; (SOC_convolution_c++/operation.cpp:28) automatically." tag=""/>
+	<Message prefix="[HLS 200-111]" severity="INFO" keynum="473" content="Finished Checking Synthesizability Time (s): cpu = 00:00:01 ; elapsed = 00:00:43 . Memory (MB): peak = 118.488 ; gain = 63.387" tag=""/>
+	<Message prefix="[XFORM 203-602]" severity="INFO" keynum="794" content="Inlining function &apos;conv1&apos; into &apos;compute&apos; (SOC_convolution_c++/operation.cpp:16) automatically." tag=""/>
+	<Message prefix="[XFORM 203-602]" severity="INFO" keynum="794" content="Inlining function &apos;buff&apos; into &apos;compute&apos; (SOC_convolution_c++/operation.cpp:28) automatically." tag=""/>
+	<Message prefix="[XFORM 203-602]" severity="INFO" keynum="794" content="Inlining function &apos;conv2&apos; into &apos;compute&apos; (SOC_convolution_c++/operation.cpp:41) automatically." tag=""/>
+	<Message prefix="[HLS 200-111]" severity="INFO" keynum="473" content="Finished Pre-synthesis Time (s): cpu = 00:00:01 ; elapsed = 00:00:44 . Memory (MB): peak = 144.398 ; gain = 89.297" tag=""/>
+	<Message prefix="[HLS 200-111]" severity="INFO" keynum="473" content="Finished Architecture Synthesis Time (s): cpu = 00:00:01 ; elapsed = 00:00:45 . Memory (MB): peak = 145.148 ; gain = 90.047" tag=""/>
+	<Message prefix="[HLS 200-10]" severity="INFO" keynum="HLS_10_1317" content="Starting hardware synthesis ..." tag=""/>
+	<Message prefix="[HLS 200-10]" severity="INFO" keynum="HLS_10_1385" content="Synthesizing &apos;compute&apos; ..." tag=""/>
+	<Message prefix="[HLS 200-10]" severity="INFO" keynum="HLS_10_1477" content="----------------------------------------------------------------" tag=""/>
+	<Message prefix="[HLS 200-42]" severity="INFO" keynum="HLS_42_1438" content="-- Implementing module &apos;compute&apos;" tag=""/>
+	<Message prefix="[HLS 200-10]" severity="INFO" keynum="HLS_10_1478" content="----------------------------------------------------------------" tag=""/>
+	<Message prefix="[SCHED 204-11]" severity="INFO" keynum="139" content="Starting scheduling ..." tag=""/>
+	<Message prefix="[SCHED 204-11]" severity="INFO" keynum="138" content="Finished scheduling." tag=""/>
+	<Message prefix="[HLS 200-111]" severity="INFO" keynum="474" content=" Elapsed time: 45.505 seconds; current allocated memory: 97.920 MB." tag=""/>
+	<Message prefix="[BIND 205-100]" severity="INFO" keynum="439" content="Starting micro-architecture generation ..." tag=""/>
+	<Message prefix="[BIND 205-101]" severity="INFO" keynum="211" content="Performing variable lifetime analysis." tag=""/>
+	<Message prefix="[BIND 205-101]" severity="INFO" keynum="210" content="Exploring resource sharing." tag=""/>
+	<Message prefix="[BIND 205-101]" severity="INFO" keynum="206" content="Binding ..." tag=""/>
+	<Message prefix="[BIND 205-100]" severity="INFO" keynum="438" content="Finished micro-architecture generation." tag=""/>
+	<Message prefix="[HLS 200-111]" severity="INFO" keynum="474" content=" Elapsed time: 0.422 seconds; current allocated memory: 98.666 MB." tag=""/>
+	<Message prefix="[HLS 200-10]" severity="INFO" keynum="HLS_10_1483" content="----------------------------------------------------------------" tag=""/>
+	<Message prefix="[HLS 200-10]" severity="INFO" keynum="HLS_10_1484" content="-- Generating RTL for module &apos;compute&apos;" tag=""/>
+	<Message prefix="[HLS 200-10]" severity="INFO" keynum="HLS_10_1485" content="----------------------------------------------------------------" tag=""/>
+	<Message prefix="[RTGEN 206-500]" severity="INFO" keynum="73" content="Setting interface mode on port &apos;compute/ip&apos; to &apos;ap_memory&apos;." tag=""/>
+	<Message prefix="[RTGEN 206-500]" severity="INFO" keynum="73" content="Setting interface mode on function &apos;compute&apos; to &apos;ap_ctrl_hs&apos;." tag=""/>
+	<Message prefix="[RTGEN 206-101]" severity="WARNING" keynum="375" content="Global array &apos;out_data_1&apos; will not be exposed as RTL port." tag=""/>
+	<Message prefix="[RTGEN 206-101]" severity="WARNING" keynum="375" content="Global array &apos;fifo_out&apos; will not be exposed as RTL port." tag=""/>
+	<Message prefix="[RTGEN 206-101]" severity="WARNING" keynum="375" content="Global array &apos;out_data_2&apos; will not be exposed as RTL port." tag=""/>
+	<Message prefix="[RTGEN 206-101]" severity="WARNING" keynum="375" content="Global array &apos;out_data&apos; will not be exposed as RTL port." tag=""/>
+	<Message prefix="[SYN 201-210]" severity="INFO" keynum="402" content="Renamed object name &apos;compute_fifo_in_temp&apos; to &apos;compute_fifo_in_tbkb&apos; due to the length limit 20" tag=""/>
+	<Message prefix="[SYN 201-210]" severity="INFO" keynum="402" content="Renamed object name &apos;compute_dadd_64ns_64ns_64_4_full_dsp_1&apos; to &apos;compute_dadd_64nscud&apos; due to the length limit 20" tag=""/>
+	<Message prefix="[SYN 201-210]" severity="INFO" keynum="402" content="Renamed object name &apos;compute_dmul_64ns_64ns_64_5_max_dsp_1&apos; to &apos;compute_dmul_64nsdEe&apos; due to the length limit 20" tag=""/>
+	<Message prefix="[RTGEN 206-100]" severity="INFO" keynum="368" content="Generating core module &apos;compute_dadd_64nscud&apos;: 1 instance(s)." tag=""/>
+	<Message prefix="[RTGEN 206-100]" severity="INFO" keynum="368" content="Generating core module &apos;compute_dmul_64nsdEe&apos;: 2 instance(s)." tag=""/>
+	<Message prefix="[RTGEN 206-100]" severity="INFO" keynum="369" content="Finished creating RTL model for &apos;compute&apos;." tag=""/>
+	<Message prefix="[HLS 200-111]" severity="INFO" keynum="474" content=" Elapsed time: 0.425 seconds; current allocated memory: 100.137 MB." tag=""/>
+	<Message prefix="[RTMG 210-278]" severity="INFO" keynum="RTMG_278_1792" content="Implementing memory &apos;compute_out_data_1_ram (RAM)&apos; using block RAMs with power-on initialization." tag=""/>
+	<Message prefix="[RTMG 210-278]" severity="INFO" keynum="RTMG_278_1792" content="Implementing memory &apos;compute_out_data_2_ram (RAM)&apos; using block RAMs with power-on initialization." tag=""/>
+	<Message prefix="[RTMG 210-278]" severity="INFO" keynum="RTMG_278_1792" content="Implementing memory &apos;compute_out_data_ram (RAM)&apos; using block RAMs with power-on initialization." tag=""/>
+	<Message prefix="[RTMG 210-278]" severity="INFO" keynum="RTMG_278_1790" content="Implementing memory &apos;compute_fifo_in_tbkb_ram (RAM)&apos; using block RAMs." tag=""/>
+	<Message prefix="[RTMG 210-278]" severity="INFO" keynum="RTMG_278_1790" content="Implementing memory &apos;compute_in_conv2_ram (RAM)&apos; using block RAMs." tag=""/>
+	<Message prefix="[HLS 200-111]" severity="INFO" keynum="473" content="Finished generating all RTL models Time (s): cpu = 00:00:02 ; elapsed = 00:00:49 . Memory (MB): peak = 153.305 ; gain = 98.203" tag=""/>
+	<Message prefix="[SYSC 207-301]" severity="INFO" keynum="SYSC_301_1065" content="Generating SystemC RTL for compute." tag=""/>
+	<Message prefix="[VHDL 208-304]" severity="INFO" keynum="VHDL_304_1066" content="Generating VHDL RTL for compute." tag=""/>
+	<Message prefix="[VLOG 209-307]" severity="INFO" keynum="VLOG_307_1067" content="Generating Verilog RTL for compute." tag=""/>
+	<Message prefix="[HLS 200-112]" severity="INFO" keynum="472" content="Total elapsed time: 49.027 seconds; peak allocated memory: 100.137 MB." tag=""/>
+</Messages>

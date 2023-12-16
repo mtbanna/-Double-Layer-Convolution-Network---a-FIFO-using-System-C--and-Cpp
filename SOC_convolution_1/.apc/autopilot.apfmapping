@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<autopilotfilemapping:AutoPilotFileMapping xmlns:autopilotfilemapping="www.autoesl.com/autopilotfilemapping">
+  <source>
+    <originFiles name="Conv_14.cpp" path="C:\Users\Mahmoud\Desktop\SOC_convolution_1\Conv_14.cpp"/>
+    <originFiles name="Conv_14.h" path="C:\Users\Mahmoud\Desktop\SOC_convolution_1\Conv_14.h"/>
+    <originFiles name="Conv_28.cpp" path="C:\Users\Mahmoud\Desktop\SOC_convolution_1\Conv_28.cpp"/>
+    <originFiles name="Conv_28.h" path="C:\Users\Mahmoud\Desktop\SOC_convolution_1\Conv_28.h"/>
+    <originFiles name="FIFO.cpp" path="C:\Users\Mahmoud\Desktop\SOC_convolution_1\FIFO.cpp"/>
+    <originFiles name="FIFO.h" path="C:\Users\Mahmoud\Desktop\SOC_convolution_1\FIFO.h"/>
+    <originFiles name="Inputs.csv" path="C:\Users\Mahmoud\Desktop\Inputs.csv"/>
+  </source>
+  <testbench>
+    <originFiles name="Main.cpp" path="C:\Users\Mahmoud\Desktop\SOC_convolution_1\Main.cpp"/>
+  </testbench>
+</autopilotfilemapping:AutoPilotFileMapping>

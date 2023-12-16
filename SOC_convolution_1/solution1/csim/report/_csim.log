@@ -1,0 +1,16 @@
+INFO: [SIM 2] *************** CSIM start ***************
+INFO: [SIM 4] CSIM will launch GCC as the compiler.
+   Compiling ../../../Main.cpp in debug mode
+   Compiling ../../../Conv_14.cpp in debug mode
+   Compiling ../../../Conv_28.cpp in debug mode
+   Compiling ../../../FIFO.cpp in debug mode
+   Generating csim.exe
+0 0 0 0 0 0 0 
+0 6.55308 7.31085 0 0 0 0 
+0 -9.83566 -2.30339 1.30231 2.21205 -0.573853 0 
+0 0 0 0 8.02752 -0.0652703 0 
+0 0 0 6.89543 -1.96541 0 0 
+0 0 -0.715398 5.57785 0.145988 0 0 
+0 0 -11.3116 -0.851598 0 0 0 
+INFO: [SIM 1] CSim done with 0 errors.
+INFO: [SIM 3] *************** CSIM finish ***************
